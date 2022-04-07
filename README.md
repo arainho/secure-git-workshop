@@ -13,7 +13,7 @@ Use gitignore.io serivce to generate .gitignore files for your project
 Add dummy data to show how to fill out key value pairs.
 
 4. Fill out the config.json locally
-Signup the Wheather API service, create an API key and fill out config.json with the correspondent data.
+Signup the Wheather API or OpenWeatherMap service, create an API key and fill out config.json with the correspondent data.
 
 5. Add an entry for private config.json
 Write an entry in .gitignore file for config.json
@@ -26,4 +26,5 @@ git checkout step2
 ## +info
 https://www.toptal.com/developers/gitignore
 https://www.weatherapi.com/signup.aspx
+https://home.openweathermap.org/users/sign_up
 https://realpython.com/python-json/#a-simple-deserialization-example
