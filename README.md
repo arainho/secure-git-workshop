@@ -16,22 +16,28 @@
 - Use gitignore.io serivce to generate .gitignore files for your project   
 ```
 
-3. Create a file config.json.sample
+3. Observe the example file config.ini.sample
 ```
-Add dummy data to show how to fill out key value pairs.  
+Open and observe the dummy data showing how to fill out private data.  
 ```
 
-4. Fill out the config.json locally
+4. Add an entry for private config
+```
+Write an entry in .gitignore file for config.ini
+```
+
+5. Ensure that the private config is ignored
+```
+git check-ignore -v *
+```
+
+6. Fill out the config.ini file locally
 ```
 - Signup the Wheather API or OpenWeatherMap service
 - Create an API key
-- Fill out config.json with the correspondent data
+- Fill out config.ini with the correspondent data
 ```
 
-5. Add an entry for private config.json
-```
-Write an entry in .gitignore file for config.json
-```
 
 ## Well done 👍 move to step 2
 ```bash
