@@ -48,5 +48,6 @@ git checkout step2
 Generate git ignore files [gitignore.io](https://www.toptal.com/developers/gitignore)     
 WheatherAPI [signup](https://www.weatherapi.com/signup.aspx ), [keys](https://www.weatherapi.com/my/)    
 OpenWheatherMap [signup](https://home.openweathermap.org/users/sign_up), [api-keys](https://home.openweathermap.org/api_keys)    
-Python json (de)serializations [examples](https://realpython.com/python-json/#a-simple-deserialization-example)      
+Python json (de)serializations [examples](https://realpython.com/python-json/#a-simple-deserialization-example)     
+Git show ignored files [info](https://newbedev.com/git-command-to-show-which-specific-files-are-ignored-by-gitignore)
 
