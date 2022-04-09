@@ -26,7 +26,7 @@ Open and observe the dummy data showing how to fill out private data.
 Write an entry in .gitignore file for config.ini
 ```
 
-5. Ensure that the private config is ignored
+5. Ensure that the private config.ini is ignored
 ```
 git check-ignore -v *
 ```
