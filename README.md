@@ -18,7 +18,7 @@ Signup the Wheather API or OpenWeatherMap service, create an API key and fill ou
 5. Add an entry for private config.json
 Write an entry in .gitignore file for config.json
 
-Your done, move to step 2
+## Well done 👍 move to step 2
 ```bash
 git checkout step2
 ```
