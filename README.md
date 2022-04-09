@@ -2,7 +2,7 @@
 
 ## step1
 
-1. Identify private and public data   
+1. Identify private and public data   👓 vs 🕶️    
 Think of your files and files such as private and public classes and methods in code.
    
 2. Create a gitignore accordingly   
