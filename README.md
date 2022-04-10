@@ -36,7 +36,7 @@ Install talisman as a pre-commit hook
 make talisman_setup
 ```
 
-Your done, move to step 3
+Your done 👍 move to step 3
 ```bash
 git checkout step3
 ```
