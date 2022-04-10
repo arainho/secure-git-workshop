@@ -28,7 +28,7 @@ Write an entry in .gitignore file for config.ini
 
 5. Ensure that the private config.ini is ignored
 ```
-git check-ignore -v *
+grep -r --color config.ini .gitignore
 ```
 
 6. Fill out the config.ini file locally
@@ -38,6 +38,10 @@ git check-ignore -v *
 - Fill out config.ini with the correspondent data
 ```
 
+7. Double check that the private config.ini is ignored
+```
+git check-ignore -v *
+```
 
 ## Well done 👍 move to step 2
 ```bash
