@@ -38,7 +38,7 @@ grep -r --color config.ini .gitignore
 - Fill out config.ini with the correspondent data
 ```
 
-7. Double check that the private config.ini is ignored
+7. Double check that config.ini is indeed ignored
 ```
 git check-ignore -v *
 ```
