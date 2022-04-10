@@ -43,10 +43,6 @@ git checkout step3
 
 ## +info
 Install [Docker](https://docker-docs.netlify.app/install/) or [Colima](https://github.com/abiosoft/colima#installation)
-https://githooks.com    
+Git hooks [info](https://githooks.com)    
 OpenWeather APIs, [how to start](https://openweathermap.org/appid)    
-
-Secret detection tools:
-- [talisman](https://github.com/thoughtworks/talisman#recommended-approach)
-- [aws git-secrets](https://github.com/awslabs/git-secrets#examples)
-https://github.com/thoughtworks/talisman#recommended-approach
+Secret detection tools, [talisman](https://github.com/thoughtworks/talisman#recommended-approach)
