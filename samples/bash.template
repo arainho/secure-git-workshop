@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euxo pipefail
+
+# set -e          | makes bash exit if a command fails.
+# set -u          | makes bash exit if a variable is undefined.
+# set -x          | makes bash print each script line before it's run.
+# set -o pipefail | makes bash exit if a command in a pipeline fails. 
