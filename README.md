@@ -16,12 +16,12 @@
 - Use gitignore.io serivce to generate .gitignore files for your project   
 ```
 
-3. Observe the example file config.ini.sample
+3. Open example file config.ini.sample
 ```
-Open and observe the dummy data showing how to fill out private data.  
+Observe the dummy data showing how to fill out private data.  
 ```
 
-4. Add an entry for private config
+4. Add an entry for private config.ini
 ```
 Write an entry in .gitignore file for config.ini
 ```
