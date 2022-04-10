@@ -1,29 +1,30 @@
 # secure-git-workshop
 
-## step1
+## step2
 
-1. Identify private and public data   
-Think of your files and files such as private and public classes and methods in code.
-   
-2. Create a gitignore accordingly   
-Identify your operating systems, IDE's, programming languages and other tools   
-Use gitignore.io serivce to generate .gitignore files for your project
+1. Install requirements
+Git
+Python3
+Docker
+jq, curl, justfile, make
+bat (optional)
 
-3. Create a file config.json.sample
-Add dummy data to show how to fill out key value pairs.
+0. Create a pre-commit hook
+Overwrite (or create) one of the scripts in .git/hooks and make it executable.
 
-4. Fill out the config.json locally
-Signup the Wheather API service, create an API key and fill out config.json with the correspondent data.
 
-5. Add an entry for private config.json
-Write an entry in .gitignore file for config.json
-
-Your done, move to step 2
+Your done, move to step 3
 ```bash
-git checkout step2
+git checkout step3
 ```
 
 ## +info
-https://www.toptal.com/developers/gitignore
-https://www.weatherapi.com/signup.aspx
-https://realpython.com/python-json/#a-simple-deserialization-example
+https://githooks.com
+
+OpenWeather APIs, [how to start](https://openweathermap.org/appid)
+OpenWeather [Python sample](https://code-maven.com/openweathermap-api-using-python)
+
+Secret detection tools:
+- [talisman](https://github.com/thoughtworks/talisman#recommended-approach)
+- [aws git-secrets](https://github.com/awslabs/git-secrets#examples)
+https://github.com/thoughtworks/talisman#recommended-approach
