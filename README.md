@@ -13,7 +13,7 @@ The requirements for the present workshop are:
 ```
 
 Tested with:
-```bash
+```
 - macOS Montery 12.1
 - Git 2.32.0
 - Docker 20.10.14
@@ -24,10 +24,14 @@ Tested with:
 - bat 0.20.0
 ```
 
-0. Create a pre-commit hook
+2. Setup pre-commit hook
+```
 - Our pre-commit hook will run a secret detection tool
 - The secret detection tool is called Talisman
 - Talisman will create a script in .git/hooks and make it executable.
+```
+
+Install talisman as a pre-commit hook
 ```bash
 make talisman_setup
 ```
