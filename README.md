@@ -33,7 +33,7 @@ grep -r --color config.ini .gitignore
 
 6. Fill out the config.ini file locally
 ```
-- Signup the Wheather API or OpenWeatherMap service
+- Signup the OpenWeatherMap service
 - Create an API key
 - Fill out config.ini with the correspondent data
 ```
