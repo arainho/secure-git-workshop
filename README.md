@@ -16,42 +16,30 @@
 - Use gitignore.io serivce to generate .gitignore files for your project   
 ```
 
-3. Open example file config.ini.sample
-```
-Observe the dummy data showing how to fill out private data.  
-```
-
-4. Add an entry for private config.ini
-```
-Write an entry in .gitignore file for config.ini
+3. Add a line with config.ini in gitignore
+```bash
+- Edit .gitignore file
+- write config.ini inside
 ```
 
-5. Ensure that the private config.ini is ignored
+4. Signup and create key for OpenWeatherMap
 ```
-grep -r --color config.ini .gitignore
-```
-
-6. Fill out the config.ini file locally
-```
-- Signup the OpenWeatherMap service
-- Create an API key
-- Fill out config.ini with the correspondent data
+- https://home.openweathermap.org/users/sign_up
+- https://home.openweathermap.org/api_keys)   
 ```
 
-7. Double check that config.ini is indeed ignored
+5. Create and fill out config.ini file locally
 ```
-git check-ignore -v *
+$ cp -v samples/config.ini.sample config.ini
+```
+
+6. Ensure that the private config.ini is ignored
+```bash
+$ grep -r --color config.ini .gitignore
+$ git check-ignore -v *
 ```
 
 ## Well done 👍 move to step 2
 ```bash
 git checkout step2
 ```
-
-## +info
-Generate git ignore files [gitignore.io](https://www.toptal.com/developers/gitignore)     
-WheatherAPI [signup](https://www.weatherapi.com/signup.aspx ), [keys](https://www.weatherapi.com/my/)    
-OpenWheatherMap [signup](https://home.openweathermap.org/users/sign_up), [api-keys](https://home.openweathermap.org/api_keys)    
-Python json (de)serializations [examples](https://realpython.com/python-json/#a-simple-deserialization-example)     
-Git show ignored files [info](https://newbedev.com/git-command-to-show-which-specific-files-are-ignored-by-gitignore)
-
