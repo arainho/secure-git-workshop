@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-set -euxo pipefail
-
-API_KEY=$1
-CITY=${CITY:-Aveiro}
-curl "http://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric"
