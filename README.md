@@ -10,20 +10,29 @@
 - Or you can use shhgit and trufflehog 
 ```
 
-2. Remove file or file contens with secret
+2. There is a secret inside the Code, now what ?
+```
+- Revoke your secret
+- Generate a new one
+- Save it in your local password manager (e.g. KeepassXC)
+- Save it on a online password manager (e.g. 1Password)
+- Os Save it your company secret management solution (e.g. Hashicorp Vault)
+```
+
+3. Remove a file or content with the secret
 ```
 - rm -- "supersecrets.txt"
 - sed -i 's/secure-password/API_SECRET/g' get_wheather.py
 ```
 
-3. Remove file from history
+3. Remove file from git history
 ```
 - Check all branches for your secret
 - Check all history for your secret
 - Remove file completly from you repo
 ```
 
-Your done 👍 move to step 8
+Your done 👍 move to step 9
 ```bash
-git checkout step8
+git checkout step9
 ```
