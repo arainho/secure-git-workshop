@@ -1,16 +1,16 @@
 # secure-git-workshop
 
-## step4 - dynamic analysis
+## step6 - container scanning
 
-1. Enable dynamic analysis
+1. Enable container scanning
 ```
 - Also know as DAST
-- We will use OWASP ZAP container
+- We will use Aqua trivy container
 ```
 
 2. Run OWASP ZAP 
 
-Your done 👍 move to step 6
+Your done 👍 move to step 7
 ```bash
-git checkout step6
+git checkout step7
 ```
