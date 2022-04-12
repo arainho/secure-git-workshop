@@ -11,7 +11,7 @@
 
 2. Create dependabot yaml template
 ```
-- Generate a dependabot.yml
+- Copy dependabot.yml.sample to .github/dependabot.yml
 - identify your programming language(s)
 - Add correspondent package ecosystems 
 ```
