@@ -1,6 +1,6 @@
 # secure-git-workshop
 
-## step2 - pre-commit hook
+## step2 - pre-commit 🪝
 
 1. Install requirements
 The requirements for the present workshop are:
