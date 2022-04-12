@@ -1,6 +1,6 @@
-# secure-git-workshop
+# secure-git-workshop 🔐
 
-## First, clone the repo
+## First, clone the repo 
 ```bash
 git clone https://github.com/arainho/secure-git-workshop.git
 ```
