@@ -18,8 +18,8 @@
 
 3. Define software out-dated libraries
 ```
-- add requirements.txt
-- Define software outdated libraries 
+- create requirements.txt file
+- Define software outdated libraries (e.g. requests==2.23.0)
 ```
 
 4. Observe alerts and pull requests
