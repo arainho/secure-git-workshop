@@ -30,5 +30,6 @@ git checkout step3
 ```
 
 ## +info
-Git hooks [info](https://githooks.com)    
-Secret detection tools, [talisman](https://github.com/thoughtworks/talisman#recommended-approach)
+Git hooks [+](https://githooks.com)    
+Talisman [+](https://github.com/thoughtworks/talisman#recommended-approach)   
+Secret detection tools[+](https://github.com/arainho/knowledge-base/tree/main/secret-detection)
