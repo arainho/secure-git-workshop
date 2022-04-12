@@ -1,16 +1,16 @@
 # secure-git-workshop
 
-## step4 - static analysis
+## step4 - dynamic analysis
 
-1. Enable static analysis
+1. Enable dynamic analysis
 ```
-- Also know as SAST
-- ... 
+- Also know as DAST
+- We will use OWASP ZAP container
 ```
 
-2. Create SonarCloud account and generate an API key
+2. Run OWASP ZAP 
 
-Your done 👍 move to step 5
+Your done 👍 move to step 6
 ```bash
-git checkout step5
+git checkout step6
 ```
