@@ -12,18 +12,6 @@ The requirements for the present workshop are:
 - bat (optional)
 ```
 
-Tested with:
-```
-- macOS Montery 12.1
-- Git 2.32.0
-- Docker 20.10.14
-- Python 3.9.10
-- jq 1.6
-- curl 7.77.0
-- GNU Make 3.81
-- bat 0.20.0
-```
-
 2. Setup pre-commit hook
 ```
 - Our pre-commit hook will run a secret detection tool
