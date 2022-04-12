@@ -16,10 +16,10 @@
 - Add correspondent package ecosystems 
 ```
 
-3. Create dependabot yaml template
+3. Define software out-dated libraries
 ```
 - add requirements.txt
-- set an outdated requests version
+- Define software outdated libraries 
 ```
 
 4. Observe alerts and pull requests
