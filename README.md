@@ -30,7 +30,5 @@ git checkout step3
 ```
 
 ## +info
-Install [Docker](https://docker-docs.netlify.app/install/) or [Colima](https://github.com/abiosoft/colima#installation)
 Git hooks [info](https://githooks.com)    
-OpenWeather APIs, [how to start](https://openweathermap.org/appid)    
 Secret detection tools, [talisman](https://github.com/thoughtworks/talisman#recommended-approach)
