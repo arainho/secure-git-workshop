@@ -20,7 +20,7 @@ setup:
 	@grep -r --color Makefile .gitignore
 	#$(foreach var,$(PACKAGES),$(PKG_SYSTEM) install $(var);)
 
-verify:
+versions:
 	@git --version
 	@docker --version
 	@python3 -V
@@ -28,7 +28,7 @@ verify:
 	@curl --version
 	@make --version
 
-versions:
+verify:
 	@which git
 	@which docker
 	@which python3
