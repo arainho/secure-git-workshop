@@ -1,16 +1,19 @@
 # secure-git-workshop
 
-## step6 - container scanning
+## step7 - License scanning (optional)
 
-1. Enable container scanning
+1. Enable license scanning
 ```
-- Also know as DAST
-- We will use Aqua trivy container
+- We will use LicenseFinder
 ```
 
-2. Run OWASP ZAP 
+2. Run LicenseFinder
+```
+- Add approved licenses (e.g. GPL, MIT, Apache)
+- Scan current software dependencies licenses
+```
 
-Your done 👍 move to step 7
+Your done 👍 move to step 8
 ```bash
-git checkout step7
+git checkout step8
 ```
