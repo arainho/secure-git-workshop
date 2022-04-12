@@ -1,36 +1,34 @@
 # secure-git-workshop
 
-## step2 - pre-commit 🪝
+## step3 - software dependencies
 
-1. Install requirements
-The requirements for the present workshop are:
+1. Enable dependency scanning
+```
+- Go to Settings -> Security -> Code security and analysis 
+- Enable Dependabot alerts
+- Enable Dependabot security updates
+```
+
+2. Create dependabot yaml template
+```
+- Generate a dependabot.yml
+- identify your programming language(s)
+- Add correspondent package ecosystems 
+```
+
+3. Create dependabot yaml template
+```
+- add requirements.txt
+- set an outdated requests version
+```
+
+4. Observe alerts and pull requests
+```
+- View and analyse the dependabot alerts
+- View and approve pull requests
+```
+
+Your done 👍 move to step 4
 ```bash
-- Git
-- Docker 
-- Python3	
-- jq, curl, make
-- bat (optional)
+git checkout step4
 ```
-
-2. Setup pre-commit hook
-```
-- Our pre-commit hook will run a secret detection tool
-- The secret detection tool is called Talisman
-- Talisman will create a script in .git/hooks and make it executable.
-```
-
-Install talisman as a pre-commit hook
-```bash
-make talisman_setup
-```
-
-Your done 👍 move to step 3
-```bash
-git checkout step3
-```
-
-## +info
-Install [Docker](https://docker-docs.netlify.app/install/) or [Colima](https://github.com/abiosoft/colima#installation)
-Git hooks [info](https://githooks.com)    
-OpenWeather APIs, [how to start](https://openweathermap.org/appid)    
-Secret detection tools, [talisman](https://github.com/thoughtworks/talisman#recommended-approach)
