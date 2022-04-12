@@ -1,34 +1,16 @@
 # secure-git-workshop
 
-## step3 - software dependencies
+## step4 - static analysis
 
-1. Enable dependency scanning
+1. Enable static analysis
 ```
-- Go to Settings -> Security -> Code security and analysis 
-- Enable Dependabot alerts
-- Enable Dependabot security updates
-```
-
-2. Create dependabot yaml template
-```
-- Copy dependabot.yml.sample to .github/dependabot.yml
-- identify your programming language(s)
-- Add correspondent package ecosystems 
+- Also know as SAST
+- ... 
 ```
 
-3. Define software out-dated libraries
-```
-- create requirements.txt file
-- Define software outdated libraries (e.g. requests==2.23.0)
-```
+2. Create SonarCloud account and generate an API key
 
-4. Observe alerts and pull requests
-```
-- View and analyse the dependabot alerts
-- View and approve pull requests
-```
-
-Your done 👍 move to step 4
+Your done 👍 move to step 5
 ```bash
-git checkout step4
+git checkout step5
 ```
