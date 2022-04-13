@@ -25,7 +25,7 @@
 - sed -i 's/secure-password/API_SECRET/g' get_wheather.py
 ```
 
-3. Remove file from git history
+4. Remove file from git history
 ```
 - Check all branches for your secret
 - Check all history for your secret
