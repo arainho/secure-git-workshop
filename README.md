@@ -29,7 +29,7 @@
 ```
 - Check all branches for your secret
 - Check all history for your secret
-- Remove file completly from you repo
+- Remove file from all commits and branches
 ```
 
 Your done 👍 move to step 9
