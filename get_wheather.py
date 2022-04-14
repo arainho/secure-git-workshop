@@ -29,7 +29,7 @@ def main():
     city = argv[1]
  
     # HARDCODED SECRET ... ⚡⚡⚡☠️☠️☠️
-    api_key="secure-password"
+    api_key = "secure-password"
     
     base_url = get_base_url()
     weather = get_weather(base_url, api_key, city)
