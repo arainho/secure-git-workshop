@@ -9,8 +9,8 @@ ifeq ($(shell uname -s),Linux)
 endif
 
 setup:
-  $(SHASUM_CMD) bin/bfg_shasum.txt
-  alias bfg="java -jar bin/bfg.jar"
+  $(SHASUM_CMD) utils/bfg_shasum.txt
+  alias bfg="java -jar utils/bfg.jar"
   
  verify:
   @which bfg
