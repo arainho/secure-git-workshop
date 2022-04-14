@@ -19,17 +19,29 @@
 - Os Save it your company secret management solution (e.g. Hashicorp Vault)
 ```
 
-3. Remove a file or content with the secret
+3. Remediation approaches
+```
+- Tell your collaborators to rebase, not merge
+- Request GitHub Support to remove sensitive data in pull requests
+- Test BFG tool / git filter-repo to avoid unintended side effects
+```
+[+details](https://docs.github.com/cn/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#)
+
+3. Remove a file or any content with the secret
 ```
 - rm -- "supersecrets.txt"
 - sed -i 's/secure-password/API_SECRET/g' get_wheather.py
 ```
 
-4. Remove file from git history
+4. Prevent future commits
 ```
-- Check all branches for your secret
-- Check all history for your secret
-- Remove file from all commits and branches
+echo supersecrets.txt >> .gitignore
+echo "YOUR-FILE-WITH-SENSITIVE-DATA" >> .gitignore
+```
+
+4. Purge file from all commits and branches
+```
+bfg --delete-files supersecrets.txt
 ```
 
 Your done 👍 move to step 9
