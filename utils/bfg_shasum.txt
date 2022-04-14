@@ -1,1 +1,4 @@
+# Tool:         BFG Repo-Cleaner
+# Files:        bfg-1.14.0.jar  bfg.jar
+# Virustotal:   https://www.virustotal.com/gui/file/1a75e9390541f4b55d9c01256b361b815c1e0a263e2fb3d072b55c2911ead0b7/details
 1a75e9390541f4b55d9c01256b361b815c1e0a263e2fb3d072b55c2911ead0b7  utils/bfg.jar
