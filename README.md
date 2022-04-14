@@ -2,6 +2,12 @@
 
 ## step8 - wait, I commit a secret!
 
+0. Commit dummy secrets
+```
+echo username:password | rev >> supersecrets.txt
+echo AKIAIOSFODNN7EXAMPLE | rev >> supersecrets.txt
+```
+
 1. Identify your secret
 ```
 - Identify secrets that you app uses
