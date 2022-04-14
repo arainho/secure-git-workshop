@@ -8,6 +8,9 @@ ifeq ($(shell uname -s),Linux)
 	SHASUM_CMD := sha256sum -c
 endif
 
+fix:
+	sed -i 's/\"secure-password\"/get_api_key\(\)/g' get_wheather.py
+
 delete:
 	$(SHASUM_CMD) utils/bfg_shasum.txt
 	alias bfg="java -jar utils/bfg.jar"
