@@ -36,7 +36,7 @@ echo AKIAIOSFODNN7EXAMPLE | rev >> supersecrets.txt
 3. Remove a file or any content with the secret
 ```
 - rm -- "supersecrets.txt"
-- sed -i 's/secure-password/API_SECRET/g' get_wheather.py
+- make fix
 ```
 
 4. Prevent future commits
