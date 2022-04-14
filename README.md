@@ -36,12 +36,12 @@
 4. Prevent future commits
 ```
 echo supersecrets.txt >> .gitignore
-echo "YOUR-FILE-WITH-SENSITIVE-DATA" >> .gitignore
+echo "YOUR_FILE_WITH_SENSITIVE_DATA" >> .gitignore
 ```
 
 4. Purge file from all commits and branches
 ```
-(bfg --delete-files supersecrets.txt | FILE_WITH_SECRETS=supersecrets.txt make delete)
+(bfg --delete-files supersecrets.txt | SENSITIVE_FILE=supersecrets.txt make delete)
 ```
 
 Your done 👍 move to step 9
