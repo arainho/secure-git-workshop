@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: utils/bfg_shasum.txt
+  checksum: 433e8bf8d9fcf8bf1c04ac6533bfe751e4937b048239f99e34285cf10731bf5d
+version: ""
