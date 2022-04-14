@@ -28,7 +28,9 @@ def main():
         exit("Usage: {} CITY".format(argv[0]))
     city = argv[1]
  
-    api_key = get_api_key()
+    # HARDCODED SECRET ... ⚡⚡⚡☠️☠️☠️
+    api_key="secure-password"
+    
     base_url = get_base_url()
     weather = get_weather(base_url, api_key, city)
  
