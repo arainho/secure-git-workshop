@@ -2,6 +2,7 @@ SHELL := /bin/bash
 
 ifeq ($(shell uname -s),Darwin)
 	SHASUM_CMD := shasum -a 256 -c
+	EXTRA_ARG='' -e
 endif
 
 ifeq ($(shell uname -s),Linux)
@@ -9,7 +10,8 @@ ifeq ($(shell uname -s),Linux)
 endif
 
 fix:
-	sed -i 's/\"secure-password\"/get_api_key\(\)/g' get_wheather.py
+	sed -i $(EXTRA_ARG) 's/\"secure-password\"/get_api_key\(\)/g' get_wheather.py
+	sed -i $(EXTRA_ARG) '/# HARDCODED SECRET.*/d' get_wheather.py
 
 delete:
 	$(SHASUM_CMD) utils/bfg_shasum.txt
