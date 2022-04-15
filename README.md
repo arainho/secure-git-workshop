@@ -1,20 +1,21 @@
-# git-insecure-workshop  (🔓+🔑) == 🔐
+# git-insecure-workshop 🔓+🔑 = 🔐
 
-1. The present repo is for demonstration purposes 🚗
-2. There are bad practices everywhere ⚡☠️
+## Starting points
+1. The present repo is for demonstration purposes 🚗     
+2. There are bad practices everywhere ⚡⚡⚡☠️☠️☠️
 3. We'll fix them throughout the workshop! 😉
 
-## The starting point ?
+## Setup options
 - In your laptop 💻
 - In a Linux Virtual Machine 🧵
 - Fork the repo and use GitHub Actions 🍴
 
-## Clone the repo
+## Clone repo
 ```bash
 git clone https://github.com/arainho/secure-git-workshop.git
 ```
 
-## Define your name & email for commits
+## Define metadata for commits
 ```bash
 git config user.name "Your Name"
 git config user.email "your@mail.com"
