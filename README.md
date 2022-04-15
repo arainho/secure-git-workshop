@@ -2,6 +2,12 @@
 
 ## step9 - wait, I upload a container with a secret!
 
+0. Setup Github actions
+```
+[Open]       https://github.com/arainho/git-insecure-workshop/actions/new
+[Click]       set up a workflow yourself
+```
+
 1. Identify your secret
 ```
 - Identify Dockerfile with secrets 
