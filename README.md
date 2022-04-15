@@ -1,7 +1,8 @@
-# secure-git-workshop 🔐
+# git-insecure-workshop  (🔓+🔑) == 🔐
 
-The present repo is for demonstration purposes!        
-The are bad practices everywhere ⚡☠️ that we fix along the workshop. 😉   
+1. The present repo is for demonstration purposes 🚗
+2. There are bad practices everywhere ⚡☠️
+3. We'll fix them throughout the workshop! 😉
 
 ## The starting point ?
 - In your laptop 💻
@@ -16,7 +17,7 @@ git clone https://github.com/arainho/secure-git-workshop.git
 ## Define your name & email for commits
 ```bash
 git config user.name "Your Name"
-git config user.email "you@example.com"
+git config user.email "your@mail.com"
 ```
 
 ## Done 👍 move to step 1
