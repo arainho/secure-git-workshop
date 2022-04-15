@@ -1,7 +1,7 @@
 # secure-git-workshop 🔐
 
-The present repo is for demonstration purposes!!!
-The are bad practices everywhere ⚡☠️ that we fix along the workshop. 😉
+The present repo is for demonstration purposes !!!   
+The are bad practices everywhere ⚡☠️ that we fix along the workshop. 😉   
 
 ## The starting point ?
 - In your laptop 💻
