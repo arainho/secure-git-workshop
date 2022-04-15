@@ -39,4 +39,4 @@ jobs:
           push: true
           context: "{{defaultContext}}:python-docker"
           tags: arainho/git-insecure-workshop:latest
-          file: python-docker/Dockerfile
+          file: Dockerfile
