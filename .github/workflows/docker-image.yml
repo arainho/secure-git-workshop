@@ -37,6 +37,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: "python-docker"
+          context: "$PWD/python-docker"
           tags: arainho/git-insecure-workshop:latest
           file: Dockerfile
