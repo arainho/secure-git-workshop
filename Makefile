@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-IMAGE_NAME ?= wheather-docker
+IMAGE_NAME ?= git-insecure-workshop
 IMAGE_TAG ?= v1.0.0
 DEFAULT_TAG ?= latest
 BUILD_PATH ?= python-docker

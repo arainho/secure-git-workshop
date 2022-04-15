@@ -1,0 +1,6 @@
+# ignored files
+Dockerfile
+
+# files to add
+!get_wheather.py
+!requirements.txt
