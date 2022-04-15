@@ -2,13 +2,13 @@
 
 ## step9 - wait, I upload a container with a secret!
 
-0. Setup Github actions
+0. Setup Github actions   
 Open URL and set up a workflow yourself
 ```
 https://github.com/arainho/git-insecure-workshop/actions/new 
 ```
 
-1. Setup Github secrets
+1. Setup Github secrets   
 Open URL and define variable DOCKERHUB_USERNAME and DOCKERHUB_TOKEN
 ```
 https://github.com/arainho/git-insecure-workshop/settings/secrets/actions
