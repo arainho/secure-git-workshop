@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1
 
+# VULNERABLE IMAGE ... ⚡⚡⚡☠️☠️☠️
 FROM python:3.5-slim-buster
 
 # HARDCODED SECRET ... ⚡⚡⚡☠️☠️☠️
