@@ -4,18 +4,24 @@
 
 0. Setup Github actions
 ```
-[Open]       https://github.com/arainho/git-insecure-workshop/actions/new
-[Click]       set up a workflow yourself
+[Open]    https://github.com/arainho/git-insecure-workshop/actions/new
+[Click]   set up a workflow yourself
 ```
 
-1. Identify your secret
+1. Setup Github secrets
+```
+[Open]    https://github.com/arainho/git-insecure-workshop/settings/secrets/actions
+[Add]     variables DOCKERHUB_USERNAME and DOCKERHUB_TOKEN
+```
+
+2. Identify your secret
 ```
 - Identify Dockerfile with secrets 
 - Look inside your Dockefile for them
 - Or you can use shhgit and trufflehog 
 ```
 
-2. There is a secret inside the Dockerfile, now what ?
+3. There is a secret inside the Dockerfile, now what ?
 ```
 - Revoke your secret
 - Generate a new one
@@ -24,7 +30,7 @@
 - Os Save it your company secret management solution (e.g. Hashicorp Vault)
 ```
 
-3. Cleanup compromized Dockerfile
+4. Cleanup compromized Dockerfile
 ```
 - Remove Dockerfile file from repo
 - Remove it from git history 
@@ -35,13 +41,13 @@
 -- Scan Dockerfile with secret detection and container scanning tools 
 ```
 
-4. Remove container from docker hub
+5. Remove container from docker hub
 ```
 - Remove all the container images (advised)
 - Or remove just specific tags with the secret (more work, more risky) 
 ```
 
-5. Check if your content is saved online
+6. Check if your content is saved online
 ```
 - We never know if someone saved the content or not!
 - Check number of downloads of your image
