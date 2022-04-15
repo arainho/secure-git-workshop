@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3.9-slim-buster
+FROM python:3.5-slim-buster
 
 # HARDCODED SECRET ... ⚡⚡⚡☠️☠️☠️
 ENV API_KEY="secure-password"
