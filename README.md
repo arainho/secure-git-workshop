@@ -1,6 +1,14 @@
 # secure-git-workshop 🔐
 
-## First, clone the repo 
+The present repo is for demonstration purposes!!!
+The are bad practices everywhere ⚡☠️ that we fix along the workshop. 😉
+
+## The starting point ?
+- In your laptop 💻
+- In a Linux Virtual Machine 🧵
+- Fork the repo and use GitHub Actions 🍴
+
+## Clone the repo
 ```bash
 git clone https://github.com/arainho/secure-git-workshop.git
 ```
