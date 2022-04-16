@@ -1,4 +1,4 @@
-# git-insecure-workshop 🔓+🔑 = 🔐
+# secure-git-workshop 🔓+🔑 = 🔐
 
 ## Starting points
 1. The present repo is for demonstration purposes 🚗     
