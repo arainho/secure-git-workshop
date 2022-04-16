@@ -4,11 +4,14 @@
 
 1. Enable container scanning
 ```
-- Also know as DAST
-- We will use Aqua trivy container
+- Tools that scan outdated dependencies and packages inside containers
+- We will use Aqua trivy and Anchore grype
 ```
 
-2. Run OWASP ZAP 
+2. Run it
+```bash
+make container_scanning
+```
 
 Your done 👍 move to step 7
 ```bash
