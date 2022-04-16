@@ -24,8 +24,14 @@
 
 4. Observe alerts and pull requests
 ```
+- Wait some minutes
 - View and analyse the dependabot alerts
 - View and approve pull requests
+```
+
+5. Run dependency scan locally
+```
+make dependency_scan
 ```
 
 Your done 👍 move to step 4
