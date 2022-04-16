@@ -6,7 +6,7 @@ DC_PROJECT ?= "dependency-check scan: $(shell pwd)"
 DATA_DIRECTORY ?= "$DC_DIRECTORY/data"
 CACHE_DIRECTORY ?= "$DC_DIRECTORY/data/cache"
 
-dependency_check_prepare:
+dependency_scan_prepare:
     mkdir -- tmp
     if [ ! -d "$DATA_DIRECTORY" ]; then \
         echo "Initially creating persistent directory: $DATA_DIRECTORY" \
@@ -20,7 +20,7 @@ dependency_check_prepare:
     # Make sure we are using the latest version
     docker pull owasp/dependency-check:$DC_VERSION
 
-dependency_check: dependency_check_prepare:
+dependency_scan: dependency_scan_prepare:
 docker run --rm \
     -e user=$USER \
     -u $(id -u ${USER}):$(id -g ${USER}) \
