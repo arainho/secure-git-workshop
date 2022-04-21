@@ -39,4 +39,4 @@ jobs:
           push: true
           build-args: python-docker
           tags: arainho/git-insecure-workshop:latest
-          file: Dockerfile
+          file: python-docker/Dockerfile
