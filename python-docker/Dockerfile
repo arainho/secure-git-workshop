@@ -8,7 +8,7 @@ ENV API_KEY="secure-password"
 
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
+COPY ./requirements.txt requirements.txt
 RUN python -m pip install -r requirements.txt
 
 COPY . .
