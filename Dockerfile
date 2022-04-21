@@ -1,4 +1,5 @@
-# syntax=docker/dockerfile:1
+LABEL org.opencontainers.image.authors="arainho.it@gmail.com"
+LABEL org.opencontainers.image.description="git-insecure-workshop"
 
 # VULNERABLE IMAGE ... ⚡⚡⚡ ☠️☠️☠️
 FROM python:3.5-slim-buster
