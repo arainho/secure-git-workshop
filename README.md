@@ -4,11 +4,16 @@
 
 1. Enable dynamic analysis
 ```
-- Also know as DAST
-- We will use OWASP ZAP container
+- Dynamic application security testing (DAST)
+- "Technologies designed to detect conditions indicative of a security vulnerability in an application in its running state." Gartner
+
 ```
 
 2. Run OWASP ZAP 
+```
+- We will use OWASP ZAP container
+- And a GitHub Workflow
+```
 
 Your done 👍 move to step 6
 ```bash
