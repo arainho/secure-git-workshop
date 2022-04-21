@@ -26,16 +26,17 @@ https://sonarcloud.io/projects/create
 For project key choose git-secure-workshop
 ```
 
-4. Setup Analysis on CI
+4. Setup Analysis
 ```
-https://sonarcloud.io/project/configuration
-```
-
-```
-- create project
-- copy SONAR_TOKEN and add it to GitHub actions secrets
+https://sonarcloud.io/project/configuration?id=git-secure-workshop
 ```
 
+```
+- Choose Analyze with a GitHub Action
+- Follow instructions to create a GitHub Secret and Workflow
+- Copy SONAR_TOKEN and add it to GitHub actions secrets
+- Create a GitHub workflow file .github/workflows/build.yml
+```
 
 Your done 👍 move to step 5
 ```bash
