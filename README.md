@@ -4,8 +4,8 @@
 
 1. Enable static analysis
 ```
-- Also know as SAST
-- ... 
+- Static Application Security Testing (SAST)
+- Analyze application source code, byte code and binaries for coding and design conditions that are indicative of security vulnerabilities.
 ```
 
 2. Create SonarCloud account and organization
