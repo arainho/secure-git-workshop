@@ -17,6 +17,7 @@ git config user.name "Gitbleed demo"
 ```
 
 ### Will I or my business be affected?
+1. Manual approach
 Check current metadata (name + email)
 ```bash
 git config --get user.name        
@@ -36,7 +37,7 @@ git log | grep Author | grep -v @
 git log --pretty="%an <%ae>" | sort | uniq  
 ```
 
-Automated approach
+2. Automated approach
 ```
 - Create a new dedicated CI/CD pipeline
 - Build a script that uses GitHub API
