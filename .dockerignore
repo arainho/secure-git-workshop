@@ -1,5 +1,10 @@
 # ignored files
 Dockerfile
+LICENSE
+Makefile
+README.md
+get_wheather.py
+requirements.txt
 
 # files to add
 !get_wheather.py

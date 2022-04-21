@@ -3,7 +3,7 @@ SHELL := /bin/bash
 IMAGE_NAME ?= git-insecure-workshop
 IMAGE_TAG ?= v1.0.0
 DEFAULT_TAG ?= latest
-BUILD_PATH ?= python-docker
+BUILD_PATH ?= $(PWD) 
 
 build:
 	cd $(BUILD_PATH) && \
