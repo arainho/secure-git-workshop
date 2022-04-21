@@ -38,6 +38,11 @@ https://sonarcloud.io/project/configuration?id=git-secure-workshop
 - Create a GitHub workflow file .github/workflows/build.yml
 ```
 
+5. Check the analysis results
+```
+https://sonarcloud.io/summary/new_code?id=git-secure-workshop&branch=step4
+```
+
 Your done 👍 move to step 5
 ```bash
 git checkout step5
