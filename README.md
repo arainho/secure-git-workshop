@@ -26,17 +26,9 @@ git config --get user.email
 
 Check metadata history
 ```bash
-git log |grep Author |grep -v @
+git log | grep Author | grep -v @
 git log --pretty="%an <%ae>" | sort | uniq
 ```
-
-### Will I or my business be affected?
-Manual approach
-```bash
-git log | grep Author | grep -v @ 
-git log --pretty="%an <%ae>" | sort | uniq  
-```
-
 2. Automated approach
 ```
 - Create a new dedicated CI/CD pipeline
