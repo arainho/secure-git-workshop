@@ -5,8 +5,8 @@
 1. Enable dynamic analysis
 ```
 - Dynamic application security testing (DAST)
-- "Technologies designed to detect conditions indicative of a security vulnerability in an application in its running state." Gartner
-
+- "Technologies designed to detect conditions indicative of a security vulnerability in an application in its running state."
+  (Gartner, 2022)
 ```
 
 2. Run OWASP ZAP 
