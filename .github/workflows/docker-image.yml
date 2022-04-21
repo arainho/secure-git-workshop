@@ -4,14 +4,14 @@ on:
   push:
     branches: [ step9 ]
     paths:
-     - 'python-docker/Dockerfile'
-     - 'python-docker/.dockerignore'
+     - 'Dockerfile'
+     - '.dockerignore'
      - '.github/workflows/docker-image.yml'
   pull_request:
     branches: [ step9 ]
     paths:
-     - 'python-docker/Dockerfile'
-     - 'python-docker/.dockerignore'
+     - 'Dockerfile'
+     - '.dockerignore'
      - '.github/workflows/docker-image.yml'
 
 jobs:
@@ -37,6 +37,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          build-args: python-docker
           tags: arainho/git-insecure-workshop:latest
-          file: python-docker/Dockerfile
+          file: Dockerfile
