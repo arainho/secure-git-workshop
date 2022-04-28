@@ -6,7 +6,7 @@ verify:
 	@docker-compose --version
 	@python3 -V
 	@jq --version
-	@curl --version
+	@curl --version | tail -n1
 	@make --version
 
 versions:
