@@ -17,14 +17,14 @@
 - DAST API scanning
 ```
 
-2. Preview the REST API application code
+2. Preview the REST API application code    
 ```
 - https://github.com/optiv/rest-api-goat
 ```
 
-3. Analyze GitHub Workflow
+3. Analyze GitHub Workflow    
 ```
-- https://github.com/optiv/rest-api-goat
+[api-scanning-workflow](.github/workflows/api-scanning.yml)
 ```
 
 Your done 👍 move to step 6
