@@ -52,6 +52,8 @@ jobs:
         
     # Launch API scan
     - name: Scanning
+      env:
+        GOAT_API_TOKEN: ${{ secrets.GOAT_API_TOKEN }}
       run: |-
         pushd "${{env.APP_DIR}}"
         docker-compose run --name "${{env.CONTAINER_NAME}}" -d -e ENV="${{env.ENV}}" -e REPORT_FILE="${{env.API_REPORT_FILE}}" -e TARGET="${{env.API_TARGET}}" zap2docker
