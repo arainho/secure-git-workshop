@@ -50,6 +50,7 @@ jobs:
     - name: RunAPI
       run: |-
         pushd "${{env.APP_DIR}}"
+        docker-compose build --no-cache web
         docker-compose up -d web
         docker-compose logs web
         popd
