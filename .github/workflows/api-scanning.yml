@@ -13,6 +13,15 @@ on:
      - '.dockerignore'
      - '.github/workflows/api-scanning.yml'
 
+env:
+  ## Sets environment variables
+  ENV: "dev"
+  DELETE_FLAG: "true"
+  API_TARGET: "http://web:5000"
+  API_REPORT_FILE: "api_report.json"
+  CONTAINER_NAME: "zap2docker_scan"
+  APP_DIR: "rest-api-goat"
+
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -22,15 +31,27 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    # Build images
-    - name: Build
+    # Cleanup
+    - name: Clean
       run: |-
-        echo "building"
-        ABC="xyz"
-        export XYZ="foo"
-    # Run API scan
-    - name: Tests
+        if [ "${{env.DELETE_FLAG}}" == "true" ]
+        then
+          docker-compose rm -f web
+          docker-compose rm -f zap2docker
+        fi
+
+    # Run REST API Goat
+    - name: RunAPI
       run: |-
-        echo "running"
-        echo "$ABC"
-        echo "$XYZ"
+        pushd "${{env.APP_DIR}}"
+        docker-compose up -d web
+        docker-compose logs web
+        popd "${{env.APP_DIR}}"
+        
+    # Launch API scan
+    - name: Scanning
+      run: |-
+        pushd "${{env.APP_DIR}}"
+        docker-compose run --name "${{env.CONTAINER_NAME}}" -d -e ENV="${{env.ENV}" -e REPORT_FILE="${{env.API_REPORT_FILE}}" -e TARGET="${{env.API_TARGET}}" zap2docker
+        docker logs -f "${{env.CONTAINER_NAME}}"
+        popd "${{env.APP_DIR}}"
