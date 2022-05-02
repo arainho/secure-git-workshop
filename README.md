@@ -24,7 +24,7 @@
 
 3. Analyze GitHub Workflow    
 ```
-[api-scanning-workflow](.github/workflows/api-scanning.yml)
+.github/workflows/api-scanning.yml
 ```
 
 Your done 👍 move to step 6
