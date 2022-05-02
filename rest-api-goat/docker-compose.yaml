@@ -6,9 +6,11 @@ services:
     ports: 
       - '5000:5000'
   py-web:
-    build: py-web/Dockerfile
+    build: py-web/
     ports:
       - '8000:8000'
+    depends_on:
+      - web 
   zap2docker:
     image: owasp/zap2docker-weekly
     ports:
@@ -16,11 +18,10 @@ services:
     environment:
       LEVEL_TO_SHOW: PASS
       REPORT_FILE: api_report.json
-      TARGET: openapi.json
+      TARGET: http://127.0.0.1:8000/openapi.json
     depends_on:
-      - web 
+      - py-web 
     volumes:
       - ./:/zap/wrk
       - ./zap-api-scan.sh:/zap/wrk/zap-api-scan.sh
     entrypoint: /zap/wrk/zap-api-scan.sh
-

@@ -4,5 +4,7 @@ ENV APP_DIR /webapp/src
 ENV PYTHONUNBUFFERED=1
 
 COPY simple_server.py ${APP_DIR}/
+COPY openapi.json ${APP_DIR}/
+COPY openapi.yaml ${APP_DIR}/
 WORKDIR ${APP_DIR}
 CMD ["python", "simple_server.py"]
