@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "npm": "^8.8.0",
+    "npm-upgrade": "^3.1.0",
+    "postman-to-openapi": "^2.2.1"
+  }
+}

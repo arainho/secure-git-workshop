@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web: 
+    build: .
+    ports: 
+      - '5000:5000'
+  zap2docker:
+    image: owasp/zap2docker-weekly
+    ports:
+      - "8080:8080"
+    environment:
+      LEVEL_TO_SHOW: PASS
+      REPORT_FILE: dast_report.json
+      TARGET: https://web:5000/ema.rainho/secureapps-ci/v1/openapi.json
+    depends_on:
+      - web 
+    volumes:
+      - ./:/zap/wrk/
+      - ./zap-api-scan.sh:/zap/wrk/zap-api-scan.sh
+    entrypoint: /zap/wrk/zap-api-scan.sh
+

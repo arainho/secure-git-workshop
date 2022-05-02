@@ -1,0 +1,129 @@
+---
+openapi: 3.0.3
+info:
+  title: REST API Goat
+  description: Test cases for the REST API Goat
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: "http://localhost"
+paths:
+  /authenticate:
+    post:
+      summary: Authenticate
+      description: Authenticate
+      operationId: authenticate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                api_token:
+                  type: string
+                  example: vfuzd2nvaweojqolm4kq
+            example:
+              api_token: vfuzd2nvaweojqolm4kq
+      responses:
+        "200":
+          description: ""
+  /confirm_transfer/1:
+    post:
+      summary: Confirm Transfer
+      description: Confirm Transfer
+      operationId: confirmTransfer
+      responses:
+        "200":
+          description: ""
+  /get_customer_v1/2:
+    get:
+      summary: Get Customer v1 (ID)
+      description: Get Customer v1 (ID)
+      operationId: getCustomerV1Id
+      responses:
+        "200":
+          description: ""
+  /get_customer_v2/2:
+    get:
+      summary: Get Customer v2 (ID)
+      description: Get Customer v2 (ID)
+      operationId: getCustomerV2Id
+      responses:
+        "200":
+          description: ""
+  /get_customers:
+    get:
+      summary: Get Customers
+      description: Get Customers
+      operationId: getCustomers
+      responses:
+        "200":
+          description: ""
+  /get_transfers:
+    get:
+      summary: Get Transfers (All)
+      description: Get Transfers (All)
+      operationId: getTransfersAll
+      responses:
+        "200":
+          description: ""
+  /get_transfers/CREATED:
+    get:
+      summary: Get Transfers (Created)
+      description: Get Transfers (Created)
+      operationId: getTransfersCreated
+      responses:
+        "200":
+          description: ""
+  /new_token:
+    post:
+      summary: Create Access Token
+      description: This is used by banks when they want to add a new API token for a client to use.
+      operationId: createAccessToken
+      responses:
+        "200":
+          description: ""
+  /process_transfers:
+    post:
+      summary: Process Transfers
+      description: Process Transfers
+      operationId: processTransfers
+      responses:
+        "200":
+          description: ""
+  /token/jyrvm14k9tvdiesxwgku:
+    delete:
+      summary: Delete Token
+      description: Delete Token
+      operationId: deleteToken
+      responses:
+        "200":
+          description: ""
+  /transfer:
+    put:
+      summary: Create Transfer
+      description: Create Transfer
+      operationId: createTransfer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ammount:
+                  type: string
+                  example: "500"
+                from:
+                  type: number
+                  example: 5
+                to:
+                  type: number
+                  example: 3
+            example:
+              ammount: "500"
+              from: 5
+              to: 3
+      responses:
+        "200":
+          description: ""
+tags: []
