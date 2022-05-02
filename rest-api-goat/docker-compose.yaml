@@ -5,6 +5,10 @@ services:
     build: .
     ports: 
       - '5000:5000'
+  py-web:
+    build: py-web/Dockerfile
+    ports:
+      - '8000:8000'
   zap2docker:
     image: owasp/zap2docker-weekly
     ports:
