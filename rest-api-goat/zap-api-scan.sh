@@ -3,7 +3,8 @@
 target_url="${TARGET}"
 level_to_show="${LEVEL_TO_SHOW}"
 results_file="${REPORT_FILE:-api_report.json}"
-default_key="$(jq -r '.item[] | select(.name=="Get Customers").request.header[] | select(.key=="X-API-Token").value' < assets/Postman.json)"
+test -f assets/Postman.json && \
+	default_key="$(jq -r '.item[] | select(.name=="Get Customers").request.header[] | select(.key=="X-API-Token").value' < assets/Postman.json)"
 api_key=${GOAT_API_TOKEN:-$default_key}
 export api_key
 
