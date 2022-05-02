@@ -3,14 +3,18 @@ on:
   push:
     branches: [ step5 ]
     paths:
-     - 'Dockerfile'
-     - '.dockerignore'
+     - 'rest-api-goat/Dockerfile'
+     - 'rest-api-goat/.dockerignore'
+     - 'rest-api-goat/zap-api-scan.sh'
+     - 'rest-api-goat/docker-compose.yaml'
      - '.github/workflows/api-scanning.yml'
   pull_request:
     branches: [ step5 ]
     paths:
-     - 'Dockerfile'
-     - '.dockerignore'
+     - 'rest-api-goat/Dockerfile'
+     - 'rest-api-goat/.dockerignore'
+     - 'rest-api-goat/zap-api-scan.sh'
+     - 'rest-api-goat/docker-compose.yaml'
      - '.github/workflows/api-scanning.yml'
 
 env:
