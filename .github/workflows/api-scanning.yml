@@ -26,7 +26,11 @@ jobs:
     - name: Build
       run: |-
         echo "building"
+        ABC="xyz"
+        export XYZ="foo"
     # Run API scan
     - name: Tests
       run: |-
         echo "running"
+        echo "$ABC"
+        echo "$XYZ"
