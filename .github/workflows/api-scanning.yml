@@ -1,0 +1,32 @@
+name: CI - DAST API scanning
+on:
+  push:
+    branches: [ main ]
+    paths:
+     - 'Dockerfile'
+     - '.dockerignore'
+     - '.github/workflows/api-scanning.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+     - 'Dockerfile'
+     - '.dockerignore'
+     - '.github/workflows/api-scanning.yml'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks-out our repository
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Build images
+    - name: Build
+      run: |-
+        echo "building"
+    # Run API scan
+    - name: Tests
+      run: |-
+        echo "running"
