@@ -11,12 +11,13 @@ services:
       - "8080:8080"
     environment:
       LEVEL_TO_SHOW: PASS
-      REPORT_FILE: dast_report.json
+      REPORT_FILE: api_report.json
       TARGET: openapi.json
     depends_on:
       - web 
     volumes:
-      - ./:/zap/wrk/
+      - ./:/zap/wrk
+      - ./reports:/zap/wrk/reports
       - ./zap-api-scan.sh:/zap/wrk/zap-api-scan.sh
     entrypoint: /zap/wrk/zap-api-scan.sh
 

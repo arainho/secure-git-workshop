@@ -8,8 +8,7 @@ test -f assets/Postman.json && \
 api_key=${GOAT_API_TOKEN:-$default_key}
 export api_key
 
-report_folder="./reports"
-config_folder="./private_config"
+report_folder="reports"
 server_name=$(echo "$target_url" | awk -F[/:] '{print $4}')
 server_port=$(echo "$target_url" | awk -F[/:] '{print $5}')
 
@@ -20,7 +19,6 @@ echo "port: ${server_port}"
 
 # create folders
 test -d "${report_folder}" || mkdir -p "${report_folder}"
-test -d "${config_folder}" || mkdir -p "${config_folder}"
 
 # run scanner
 zap-api-scan.py \
