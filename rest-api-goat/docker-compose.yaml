@@ -17,7 +17,6 @@ services:
       - web 
     volumes:
       - ./:/zap/wrk
-      - ./reports:/zap/wrk/reports
       - ./zap-api-scan.sh:/zap/wrk/zap-api-scan.sh
     entrypoint: /zap/wrk/zap-api-scan.sh
 
