@@ -13,6 +13,18 @@
 ```
 - We will use OWASP ZAP container
 - And a GitHub Workflow
+- To analyse a REST API
+- DAST API scanning
+```
+
+2. Preview the REST API application code
+```
+- https://github.com/optiv/rest-api-goat
+```
+
+3. Analyze GitHub Workflow
+```
+- https://github.com/optiv/rest-api-goat
 ```
 
 Your done 👍 move to step 6
