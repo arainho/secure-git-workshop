@@ -40,7 +40,7 @@ jobs:
           docker-compose rm -f web
           docker-compose rm -f zap2docker
         fi
-        popd "${{env.APP_DIR}}"
+        popd
 
     # Run REST API Goat
     - name: RunAPI
@@ -48,7 +48,7 @@ jobs:
         pushd "${{env.APP_DIR}}"
         docker-compose up -d web
         docker-compose logs web
-        popd "${{env.APP_DIR}}"
+        popd
         
     # Launch API scan
     - name: Scanning
@@ -56,4 +56,4 @@ jobs:
         pushd "${{env.APP_DIR}}"
         docker-compose run --name "${{env.CONTAINER_NAME}}" -d -e ENV="${{env.ENV}}" -e REPORT_FILE="${{env.API_REPORT_FILE}}" -e TARGET="${{env.API_TARGET}}" zap2docker
         docker logs -f "${{env.CONTAINER_NAME}}"
-        popd "${{env.APP_DIR}}"
+        popd
