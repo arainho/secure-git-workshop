@@ -55,6 +55,15 @@ jobs:
         docker-compose logs web
         popd
         
+    # Serve Goat OpenAPI definition
+    - name: RunAPI
+      run: |-
+        pushd "${{env.APP_DIR}}"
+        docker-compose build --no-cache py-web
+        docker-compose up -d py-web
+        docker-compose logs py-web
+        popd
+        
     # Launch API scan
     - name: Scanning
       env:
