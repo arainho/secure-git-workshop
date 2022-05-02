@@ -52,6 +52,6 @@ jobs:
     - name: Scanning
       run: |-
         pushd "${{env.APP_DIR}}"
-        docker-compose run --name "${{env.CONTAINER_NAME}}" -d -e ENV="${{env.ENV}" -e REPORT_FILE="${{env.API_REPORT_FILE}}" -e TARGET="${{env.API_TARGET}}" zap2docker
+        docker-compose run --name "${{env.CONTAINER_NAME}}" -d -e ENV="${{env.ENV}}" -e REPORT_FILE="${{env.API_REPORT_FILE}}" -e TARGET="${{env.API_TARGET}}" zap2docker
         docker logs -f "${{env.CONTAINER_NAME}}"
         popd "${{env.APP_DIR}}"
