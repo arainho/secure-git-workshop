@@ -1,13 +1,13 @@
 name: CI - DAST API scanning
 on:
   push:
-    branches: [ main ]
+    branches: [ step5 ]
     paths:
      - 'Dockerfile'
      - '.dockerignore'
      - '.github/workflows/api-scanning.yml'
   pull_request:
-    branches: [ main ]
+    branches: [ step5 ]
     paths:
      - 'Dockerfile'
      - '.dockerignore'
