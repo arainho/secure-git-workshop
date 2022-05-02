@@ -12,7 +12,7 @@ services:
     environment:
       LEVEL_TO_SHOW: PASS
       REPORT_FILE: dast_report.json
-      TARGET: https://web:5000/ema.rainho/secureapps-ci/v1/openapi.json
+      TARGET: openapi.json
     depends_on:
       - web 
     volumes:
