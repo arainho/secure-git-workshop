@@ -34,11 +34,13 @@ jobs:
     # Cleanup
     - name: Clean
       run: |-
+        pushd "${{env.APP_DIR}}"
         if [ "${{env.DELETE_FLAG}}" == "true" ]
         then
           docker-compose rm -f web
           docker-compose rm -f zap2docker
         fi
+        popd "${{env.APP_DIR}}"
 
     # Run REST API Goat
     - name: RunAPI
