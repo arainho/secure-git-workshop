@@ -23,7 +23,7 @@ env:
   ## Sets environment variables
   ENV: "dev"
   DELETE_FLAG: "true"
-  API_TARGET: "http://py-web:9999/openapi.json"
+  TARGET_API_DEF: "py-web/openapi.json"
   API_REPORT_FILE: "api_report.json"
   CONTAINER_NAME: "zap2docker_scan"
   APP_DIR: "rest-api-goat"

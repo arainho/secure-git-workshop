@@ -18,10 +18,10 @@ services:
     environment:
       LEVEL_TO_SHOW: PASS
       REPORT_FILE: api_report.json
-      TARGET: http://py-web:9999/openapi.json
+      TARGET_API_DEF: py-web/openapi.json
     depends_on:
       - py-web 
     volumes:
-      - ./reports:/zap/wrk/reports:rw
+      - ./:/zap/wrk/:rw
       - ./zap-api-scan.sh:/zap/wrk/zap-api-scan.sh
     entrypoint: /zap/wrk/zap-api-scan.sh

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-target_url="${TARGET}"
+target_api_definition="${TARGET_API_DEF:-py-web/openapi.json}"
 level_to_show="${LEVEL_TO_SHOW}"
 results_file="${REPORT_FILE:-api_report.json}"
 report_folder="${REPORT_FOLDER:-reports}"
@@ -13,12 +13,17 @@ api_key=${GOAT_API_TOKEN:-$default_key}
 fi
 export api_key
 
+if [[ $(grep -c http <<<$target_api_definition) -eq 1 ]]
+	target_api_definition="${TARGET_API_DEF}"
+else
+	target_api_definition=$(grep url ${TARGET_API_DEF} | awk -F '"url": "' '{print $2}' | cut -d "\"" -f1)
+fi
 
-server_name=$(echo "$target_url" | awk -F[/:] '{print $4}')
-server_port=$(echo "$target_url" | awk -F[/:] '{print $5}')
+server_name=$(echo "$target_api_definition" | awk -F[/:] '{print $4}')
+server_port=$(echo "$target_api_definition" | awk -F[/:] '{print $5}')
 
 # show target, server and port
-echo "target: ${target_url}"
+echo "target: ${target_api_definition}"
 echo "server: ${server_name}"
 echo "port: ${server_port}"
 
@@ -27,7 +32,7 @@ test -d "${report_folder}" || mkdir -p "${report_folder}"
 
 # run scanner
 zap-api-scan.py \
-    -t "${target_url}" \
+    -t "${target_api_definition}" \
     -f openapi \
     -d \
     -I \
