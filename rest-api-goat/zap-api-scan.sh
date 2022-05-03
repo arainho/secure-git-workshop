@@ -16,18 +16,18 @@ export api_key
 
 if [[ $(grep -c http <<<$target_api_definition) -eq 1 ]]
 then
-	target_api_definition="${TARGET_API_DEF}"
+	target_tmp="${TARGET_API_DEF}"
 else
-	target_api_definition=$(grep url "${BASE_PATH}/${TARGET_API_DEF}" | awk -F '"url": "' '{print $2}' | cut -d "\"" -f1)
+	target_tmp=$(grep url "${BASE_PATH}/${TARGET_API_DEF}" | awk -F '"url": "' '{print $2}' | cut -d "\"" -f1)
 fi
 
-server_name=$(echo "$target_api_definition" | awk -F[/:] '{print $4}')
-server_port=$(echo "$target_api_definition" | awk -F[/:] '{print $5}')
+server_name=$(echo "$target_tmp" | awk -F[/:] '{print $4}')
+server_port=$(echo "$target_tmp" | awk -F[/:] '{print $5}')
 
 # show target, server and port
-echo "target: ${target_api_definition}"
-echo "server: ${server_name}"
-echo "port: ${server_port}"
+echo "target api-definition: ${target_api_definition}"
+echo "target server: ${server_name}"
+echo "target port: ${server_port}"
 
 # create folders
 test -d "${report_folder}" || mkdir -p "${report_folder}"
