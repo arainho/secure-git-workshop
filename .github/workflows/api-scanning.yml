@@ -3,7 +3,7 @@ on:
   push:
     branches: [ step5 ]
     paths:
-     - 'py-web/Dockerfile'
+     - 'rest-api-goat/py-web/Dockerfile'
      - 'rest-api-goat/Dockerfile'
      - 'rest-api-goat/.dockerignore'
      - 'rest-api-goat/zap-api-scan.sh'
@@ -12,7 +12,7 @@ on:
   pull_request:
     branches: [ step5 ]
     paths:
-     - 'py-web/Dockerfile'
+     - 'rest-api-goat/py-web/Dockerfile'
      - 'rest-api-goat/Dockerfile'
      - 'rest-api-goat/.dockerignore'
      - 'rest-api-goat/zap-api-scan.sh'
