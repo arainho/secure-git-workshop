@@ -22,7 +22,7 @@ services:
     depends_on:
       - py-web 
     volumes:
-      - ./reports:/zap/wrk/reports:rw
+      - ./:/zap/wrk:rw
       - ./py-web/openapi.json:/zap/wrk/py-web/openapi.json
       - ./zap-api-scan.sh:/zap/wrk/zap-api-scan.sh
     entrypoint: /zap/wrk/zap-api-scan.sh
