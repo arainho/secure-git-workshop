@@ -27,6 +27,7 @@ env:
   API_REPORT_FILE: "api_report.json"
   CONTAINER_NAME: "zap2docker_scan"
   APP_DIR: "rest-api-goat"
+  REPORT_FOLDER: "reports"
 
 jobs:
   docker:
@@ -73,6 +74,7 @@ jobs:
         GOAT_API_TOKEN: ${{ secrets.GOAT_API_TOKEN }}
       run: |-
         pushd "${{env.APP_DIR}}"
+        test -d "${REPORT_FOLDER}" || mkdir -p "${REPORT_FOLDER}"
         docker-compose run --name "${{env.CONTAINER_NAME}}" -d -e ENV="${{env.ENV}}" -e REPORT_FILE="${{env.API_REPORT_FILE}}" -e TARGET="${{env.API_TARGET}}" zap2docker
         docker logs -f "${{env.CONTAINER_NAME}}"
         popd
