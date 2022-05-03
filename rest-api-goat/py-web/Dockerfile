@@ -12,7 +12,7 @@ HEALTHCHECK --interval=3m --timeout=3s \
   CMD curl -f http://localhost:${PORT_NUMBER}/ || exit 1
 RUN mkdir -p $APP_LOCATION && \
     addgroup --gid 9999 $APP_GROUP && \
-    adduser --uid 9999 -D -G $APP_GROUP -h $APP_LOCATION $APP_USER
+    useradd --uid 9999 --gid 9999 --home-dir $APP_LOCATION $APP_USER
 
 # RUN application as a non-sudo user 😊😉
 USER $APP_USER
