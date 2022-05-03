@@ -6,6 +6,12 @@ results_file="${REPORT_FILE:-api_report.json}"
 report_folder="${REPORT_FOLDER:-reports}"
 BASE_PATH="/zap/wrk"
 
+ls -la /zap/wrk/
+ls -ld /zap/wrk/report/
+touch /zap/wrk/api_report.json
+ls -la /zap/wrk/api_report.json
+exit 1
+
 if type jq 2>/dev/null
 then
 	test -f assets/Postman.json && \
