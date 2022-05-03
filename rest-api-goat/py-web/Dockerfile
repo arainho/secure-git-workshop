@@ -11,5 +11,7 @@ COPY openapi.json ${APP_DIR}/
 COPY openapi.yaml ${APP_DIR}/
 WORKDIR ${APP_DIR}
 
+# RUNNING AS ROOT ... ⚡⚡⚡ ☠️☠️☠️, consider a dedicted non-sudo user!
+
 EXPOSE 9999
 CMD ["python", "simple_server.py"]
