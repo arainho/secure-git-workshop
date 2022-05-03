@@ -21,7 +21,7 @@ env:
   ## Sets environment variables
   ENV: "dev"
   DELETE_FLAG: "true"
-  API_TARGET: "http://web:5000"
+  API_TARGET: "http://127.0.0.1:8000/openapi.json"
   API_REPORT_FILE: "api_report.json"
   CONTAINER_NAME: "zap2docker_scan"
   APP_DIR: "rest-api-goat"
