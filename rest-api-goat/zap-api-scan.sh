@@ -3,12 +3,14 @@
 target_url="${TARGET}"
 level_to_show="${LEVEL_TO_SHOW}"
 results_file="${REPORT_FILE:-api_report.json}"
+report_folder="${REPORT_FOLDER:-reports}"
+
 test -f assets/Postman.json && \
 	default_key="$(jq -r '.item[] | select(.name=="Get Customers").request.header[] | select(.key=="X-API-Token").value' < assets/Postman.json)"
 api_key=${GOAT_API_TOKEN:-$default_key}
 export api_key
 
-report_folder="reports"
+
 server_name=$(echo "$target_url" | awk -F[/:] '{print $4}')
 server_port=$(echo "$target_url" | awk -F[/:] '{print $5}')
 
