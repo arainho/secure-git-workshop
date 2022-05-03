@@ -1,10 +1,15 @@
 FROM python:3.9
-
-ENV APP_DIR /webapp/src
+ENV APP_DIR /app
 ENV PYTHONUNBUFFERED=1
+ENV PORT=9999
+
+HEALTHCHECK --interval=3m --timeout=3s \
+  CMD curl -f http://localhost:${PORT}/ || exit 1
 
 COPY simple_server.py ${APP_DIR}/
 COPY openapi.json ${APP_DIR}/
 COPY openapi.yaml ${APP_DIR}/
 WORKDIR ${APP_DIR}
+
+EXPOSE 9999
 CMD ["python", "simple_server.py"]
