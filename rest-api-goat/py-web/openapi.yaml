@@ -6,7 +6,7 @@ info:
   version: 1.0.0
   contact: {}
 servers:
-  - url: "http://localhost"
+  - url: "http://localhost:5000"
 paths:
   /authenticate:
     post:
