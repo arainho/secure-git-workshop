@@ -7,7 +7,7 @@ report_folder="${REPORT_FOLDER:-reports}"
 BASE_PATH="/zap/wrk"
 
 ls -la /zap/wrk/
-ls -ld /zap/wrk/report/
+ls -ld /zap/wrk/reports/
 touch /zap/wrk/api_report.json
 ls -la /zap/wrk/api_report.json
 exit 1
