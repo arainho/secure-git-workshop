@@ -1,31 +1,31 @@
 # markmap
 
 ## step1
-- gitignore 🐝
+- `gitignore` 🐝
 
 ## step2
-- pre-commit 🪝
+- `pre-commit` 🪝
 
 ## step3
-- software dependencies
+- `software dependencies`
 
 ## step4
-- static analysis
+- `static analysis`
 
 ## step5
-- dynamic analysis
+- `dynamic analysis`
 
 ## step6
-- container scanning
+- `container scanning`
 
 ## step7
-- license scanning (optional)
+- `license scanning (optional)`
 
 ## step8
-- wait, I commit a secret!
+- `wait, I commit a secret!`
 
 ## step9
-- wait, I upload a container with a secret!
+- `wait, I upload a container with a secret!`
 
 ## step10
-- leaks and breaches
+- `leaks and breaches`
