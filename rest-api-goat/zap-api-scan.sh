@@ -5,9 +5,12 @@ level_to_show="${LEVEL_TO_SHOW}"
 results_file="${REPORT_FILE:-api_report.json}"
 report_folder="${REPORT_FOLDER:-reports}"
 
-test -f assets/Postman.json && \
+if type jq 2>/dev/null
+then
+	test -f assets/Postman.json && \
 	default_key="$(jq -r '.item[] | select(.name=="Get Customers").request.header[] | select(.key=="X-API-Token").value' < assets/Postman.json)"
 api_key=${GOAT_API_TOKEN:-$default_key}
+fi
 export api_key
 
 
@@ -47,6 +50,6 @@ zap-api-scan.py \
     -z "-config replacer.full_list(0).matchtype=REQ_HEADER" \
     -z "-config replacer.full_list(0).matchstr=X-API-Token" \
     -z "-config replacer.full_list(0).regex=false" \
-    -z "-config replacer.full_list(0).replacement=${api_key}" \
+    -z "-config replacer.full_list(0).replacement=${api_key}"
 
 echo "result status: $?"
