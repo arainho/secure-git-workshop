@@ -18,7 +18,7 @@ services:
     environment:
       LEVEL_TO_SHOW: PASS
       REPORT_FILE: api_report.json
-      TARGET: http://127.0.0.1:8000/openapi.json
+      TARGET: http://py-web:8000/openapi.json
     depends_on:
       - py-web 
     volumes:
