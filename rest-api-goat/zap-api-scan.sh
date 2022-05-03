@@ -39,7 +39,7 @@ zap-api-scan.py \
     -d \
     -I \
     -l "${level_to_show}" \
-    -J "${BASE_PATH}/${report_folder}/${results_file}" \
+    -J "${report_folder}/${results_file}" \
     -z "-config replacer.full_list(0).description=content" \
     -z "-config replacer.full_list(0).enabled=true" \
     -z "-config replacer.full_list(0).matchtype=REQ_HEADER" \
