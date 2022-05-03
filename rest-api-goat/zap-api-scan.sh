@@ -4,6 +4,7 @@ target_api_definition="${TARGET_API_DEF}"
 level_to_show="${LEVEL_TO_SHOW:-PASS}"
 results_file="${REPORT_FILE:-api_report.json}"
 report_folder="${REPORT_FOLDER:-reports}"
+BASE_PATH="/zap/wrk"
 
 if type jq 2>/dev/null
 then
@@ -17,7 +18,7 @@ if [[ $(grep -c http <<<$target_api_definition) -eq 1 ]]
 then
 	target_api_definition="${TARGET_API_DEF}"
 else
-	target_api_definition=$(grep url "${TARGET_API_DEF}" | awk -F '"url": "' '{print $2}' | cut -d "\"" -f1)
+	target_api_definition=$(grep url "${BASE_PATH}/${TARGET_API_DEF}" | awk -F '"url": "' '{print $2}' | cut -d "\"" -f1)
 fi
 
 server_name=$(echo "$target_api_definition" | awk -F[/:] '{print $4}')
@@ -38,7 +39,7 @@ zap-api-scan.py \
     -d \
     -I \
     -l "${level_to_show}" \
-    -J "${report_folder}/${results_file}" \
+    -J "${BASE_PATH}/${report_folder}/${results_file}" \
     -z "-config replacer.full_list(0).description=content" \
     -z "-config replacer.full_list(0).enabled=true" \
     -z "-config replacer.full_list(0).matchtype=REQ_HEADER" \
