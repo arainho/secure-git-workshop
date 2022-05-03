@@ -1,6 +1,7 @@
 ## private data
 config.ini
 talisman_report/
+rest-api-goat/reports/
 rest-api-goat/assets/__pycache__
 rest-api-goat/assets/Pipfile
 rest-api-goat/assets/Pipfile.lock
