@@ -7,9 +7,9 @@ API_TARGET="http://py-web:9999"
 API_REPORT_FILE="api_report.json"
 CONTAINER_NAME="zap2docker_scan"
 APP_DIR="rest-api-goat"
-report_folder="reports"
+REPORT_FOLDER="reports"
 
-test -d "${report_folder}" || mkdir -p "${report_folder}"
+test -d "${REPORT_FOLDER}" || mkdir -p "${REPORT_FOLDER}"
 if [ $DELETE_FLAG == "true" ]
 then
 	docker-compose rm -f web
