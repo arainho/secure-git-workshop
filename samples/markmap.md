@@ -1,4 +1,4 @@
-# markmap
+# workshop steps
 
 ## step1
 - `gitignore` 🐝
