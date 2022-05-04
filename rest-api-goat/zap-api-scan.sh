@@ -6,6 +6,7 @@ results_file="${REPORT_FILE:-api_report.json}"
 report_folder="${REPORT_FOLDER:-reports}"
 BASE_PATH="/zap/wrk"
 
+whoami
 ls -la /zap/wrk/
 ls -ld /zap/wrk/reports/
 touch /zap/wrk/api_report.json
