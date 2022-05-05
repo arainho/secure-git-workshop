@@ -13,7 +13,7 @@
 2. Create a gitignore file accordingly  
 ``` 
 - Identify your operating systems, IDE's, programming languages and other tools      
-- Use gitignore.io serivce to generate .gitignore files for your project   
+- Use gitignore.io service to generate .gitignore files for your project   
 ```
 
 3. Add a line with config.ini in gitignore
