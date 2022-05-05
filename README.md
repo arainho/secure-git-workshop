@@ -35,8 +35,8 @@ $ cp -v samples/config.ini.sample config.ini
 
 6. Ensure that the private config.ini is ignored
 ```bash
-$ grep -r --color config.ini .gitignore
-$ git check-ignore -v *
+$ grep -r --color config.ini .gitignore | grep -v "#"
+$ git check-ignore -v config.ini
 ```
 
 ## Well done 👍 move to step 2
