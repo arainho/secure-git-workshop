@@ -2,8 +2,8 @@
 
 ## step2 - pre-commit 🪝
 
-1. Install requirements
-The requirements for the present workshop are:
+1. Install requirements   
+The requirements for the present workshop are:    
 ```bash
 - Git
 - Docker 
