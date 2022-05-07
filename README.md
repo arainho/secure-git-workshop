@@ -5,10 +5,10 @@
 2. There are bad practices everywhere ⚡⚡⚡☠️☠️☠️
 3. We'll fix them throughout the workshop! 😉
 
-## Challenges execution
-- Forking the repo and use GitHub Actions 🍴🤖
+## Execution options
 - In a terminal of Laptop or Linux VM 💻🧵
+- Or fork the repo and use GitHub Actions 🍴🤖
 
-## Preparation 
-move to [setup](https://github.com/arainho/secure-git-workshop/tree/setup) 💡
+## Preparation 💡
+go to [setup](https://github.com/arainho/secure-git-workshop/tree/setup) branch.
 
