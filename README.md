@@ -13,6 +13,6 @@
 - Forking the repo and use GitHub Actions 🍴🤖
 - In a terminal of Laptop or VM 👤💻
 
-## 💡 Let's go!
-move to [setup](https://github.com/arainho/secure-git-workshop/tree/setup)***
+## 💡 Let's setup
+move to [setup](https://github.com/arainho/secure-git-workshop/tree/setup)
 
