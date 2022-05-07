@@ -42,7 +42,7 @@ https://www.vagrantup.com/downloads
 
 Start the lab with
 ```
-vagrant up
+vagrant up --provider virtualbox
 vagrant ssh
 ```
 
