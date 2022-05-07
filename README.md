@@ -10,5 +10,5 @@
 - Or fork the repo and use GitHub Actions 🍴🤖
 
 ## Preparation
-Go to [setup](https://github.com/arainho/secure-git-workshop/tree/setup) branch. 💡
+Go to [setup](https://github.com/arainho/secure-git-workshop/tree/setup) branch. 🧰 ⛏️🔧🪛
 
