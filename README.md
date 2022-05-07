@@ -7,7 +7,7 @@
 
 ## Setup options
 - In your laptop 💻
-- In a Linux Virtual Machine 🧵
+- Or in a Linux Virtual Machine 🧵
 - Fork the repo and use GitHub Actions 🍴
 
 ## Clone repo
