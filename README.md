@@ -9,6 +9,6 @@
 - In a terminal of Laptop or Linux VM 💻🧵
 - Or fork the repo and use GitHub Actions 🍴🤖
 
-## Preparation 💡
-go to [setup](https://github.com/arainho/secure-git-workshop/tree/setup) branch.
+## Preparation
+Go to [setup](https://github.com/arainho/secure-git-workshop/tree/setup) branch. 💡
 
