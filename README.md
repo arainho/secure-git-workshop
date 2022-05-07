@@ -30,10 +30,9 @@ In terms of packages install the following:
 - bat (optional)
 ```
 
-### Alternatives
-
-#### VM setup
-If you have MS Windows, this is the adviced path
+### Notes
+You can have all the software installed with proper version with Vagrant.
+If you have MS Windows, this is the adviced path to proceed.
 
 Download and install VirtualBox and Vagrant
 ```
