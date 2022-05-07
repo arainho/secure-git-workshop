@@ -47,4 +47,4 @@ vagrant ssh
 ```
 
 ## Well done 👍 move to main 
-https://github.com/arainho/secure-git-workshop
+[https://github.com/arainho/secure-git-workshop](https://github.com/arainho/secure-git-workshop/tree/main)
