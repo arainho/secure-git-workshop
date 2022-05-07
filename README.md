@@ -31,8 +31,8 @@ In terms of packages install the following:
 ```
 
 ### Notes
-You can have all the software installed with proper version with Vagrant.
-If you have MS Windows, this is the adviced path to proceed.
+You can have all the software installed with the appropriate versions using the provided Vagrant Box.   
+If you have MS Windows, this is the advised path to proceed.    
 
 Download and install VirtualBox and Vagrant
 ```
