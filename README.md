@@ -22,9 +22,8 @@
 - write config.ini inside
 ```
 
-4. Signup and create key for OpenWeatherMap
+4. Collect you key from OpenWeatherMap
 ```
-- https://home.openweathermap.org/users/sign_up
 - https://home.openweathermap.org/api_keys)   
 ```
 
