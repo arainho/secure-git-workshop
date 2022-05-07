@@ -9,6 +9,6 @@
 - Forking the repo and use GitHub Actions 🍴🤖
 - In a terminal of Laptop or Linux VM 💻🧵
 
-## Preparation 💡
-move to [setup](https://github.com/arainho/secure-git-workshop/tree/setup)
+## Preparation 
+move to [setup](https://github.com/arainho/secure-git-workshop/tree/setup) 💡
 
