@@ -18,8 +18,8 @@ Signup and create key for OpenWeatherMap
 - https://home.openweathermap.org/api_keys)   
 
 ### Required software
-The adviced operating systems are _macOS or Linux_
-You need a `bash` or `zsh` shells.
+The adviced operating systems are _macOS or Linux_  
+You need a `bash` or `zsh` shells.  
 
 In terms of packages install the following:
 ```
