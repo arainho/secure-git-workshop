@@ -5,19 +5,14 @@ Vagrant.configure("2") do |config|
     vb.memory = "1024"
   end
 
-  config.vm.network "forwarded_port", guest: 1389, host: 1389
   config.vm.network "forwarded_port", guest: 5000, host: 5000
-  config.vm.network "forwarded_port", guest: 8000, host: 8000
-  config.vm.network "forwarded_port", guest: 8888, host: 8888
-  config.vm.network "forwarded_port", guest: 9000, host: 9999
+  config.vm.network "forwarded_port", guest: 7000, host: 7000
+  config.vm.network "forwarded_port", guest: 9000, host: 9000
 
   config.vm.provision "shell", inline: <<-SHELL
 
     # update
-    yum -y update
-
-    # justfile
-    dnf install just
+    dnf -y update
 
     # ntp and timezone
     dnf install chrony
@@ -27,25 +22,10 @@ Vagrant.configure("2") do |config|
     timedatectl set-ntp yes
 
     # tools
-    yum install fish curl htop iftop iotop git strace java-latest-openjdk.x86_64
-
-    yum install -y podman
-    groupadd -f -r podman
-    #systemctl edit podman.socket
-    mkdir -p /etc/systemd/system/podman.socket.d
-    cat >/etc/systemd/system/podman.socket.d/override.conf <<EOF
-[Socket]
-SocketMode=0660
-SocketUser=root
-SocketGroup=podman
-EOF
-    systemctl daemon-reload
-    echo "d /run/podman 0770 root podman" > /etc/tmpfiles.d/podman.conf
-    sudo systemd-tmpfiles --create
-    systemctl enable podman.socket
-    systemctl start podman.socket
-    #usermod -aG podman $SUDO_USER
-    usermod -aG podman vagrant
+    dnf -y install htop iftop iotop \
+	   strace just vim \
+           bash zsh fish
+    dnf -y install git python3 jq curl make
 
     dnf -y install dnf-plugins-core
     dnf config-manager --add-repo \
