@@ -10,8 +10,8 @@
 - Or in a Linux Virtual Machine 🧵
 
 ## Challenges execution
-- locally in Laptop or VM
-- Or Forking the repository and use GitHub Actions 🍴
+- Forking the repo and use GitHub Actions 🍴🤖
+- In a terminal of Laptop or VM 👤💻
 
 ## Done 👍 move to setup
 let's [setup](https://github.com/arainho/secure-git-workshop/tree/setup)
