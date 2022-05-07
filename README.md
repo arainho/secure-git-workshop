@@ -1,6 +1,6 @@
 # secure-git-workshop
 
-## setup lab
+## setup lab ... 🧰 ⛏️🔧🪛
 
 ### 1. Required accounts
 The required accounts to complete the workshop are:
