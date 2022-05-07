@@ -38,7 +38,7 @@ $ grep -r --color config.ini .gitignore | grep -v "#"
 $ git check-ignore -v config.ini
 ```
 
-## Well done 👍 move to [step 2](https://github.com/arainho/secure-git-workshop/tree/step2)
+## Well done 👍 move to step 2
 ```bash
 git checkout step2
 ```
