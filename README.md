@@ -46,5 +46,5 @@ vagrant up
 vagrant ssh
 ```
 
-## Well done 👍 move to main 
+## let's start 🚀
 [https://github.com/arainho/secure-git-workshop](https://github.com/arainho/secure-git-workshop/tree/main)
