@@ -1,43 +1,51 @@
 # secure-git-workshop
 
-## step10 - Leaks and breaches 
+## step0 - Lab setup 
 
-### GitBleed
-
+### Required accounts
+The required accounts to complete the workshop are:
 ```
-- people have accidentally checked GitHub credentials into GitHub commits
-- mostly a username and password in the commit author fields
-```
-More at [gitbleed](https://www.notgitbleed.com/gitbleed)
-
-### Bleed it locally ...
-```bash
-git config user.email "HARDCODED ... ⚡⚡⚡ secure-password"
-git config user.name "Gitbleed demo" 
+- GitHub
+- OpenWeatherMap 
 ```
 
-### Will I or my business be affected?
-#### 1. Manual approach
-Check current metadata (name + email)
-```bash
-git config --get user.name        
-git config --get user.email
+Signup GitHub and fork the workshop repository 
+- https://github.com/signup
+- https://github.com/arainho/secure-git-workshop/fork
+
+Signup and create key for OpenWeatherMap
+- https://home.openweathermap.org/users/sign_up
+- https://home.openweathermap.org/api_keys)   
+
+### Required software
+The adviced operating systems are macOS or Linux
+You need a `bash` or `zsh` shells.
+
+In terms of packages install the following:
+```
+- git
+- docker
+- python3	
+- jq, curl, make
+- bat (optional)
 ```
 
-Check metadata history
-```bash
-git log | grep Author | grep -v @
-git log --pretty="%an <%ae>" | sort | uniq
+### Alternatives
+
+#### VM setup
+If you have MS Windows, this is the adviced path
+
+Download and install VirtualBox and Vagrant
+```
+https://www.virtualbox.org/wiki/Downloads
+https://www.vagrantup.com/downloads
 ```
 
-#### 2. Automated approach
+Start the lab with
 ```
-- Create a new dedicated CI/CD pipeline
-- Build a script that uses GitHub API
-- Search committer name and email
-- Save them in a file per repo
-- Use secret detection tools to scan those files
-- Alert through email, slack
+vagrant up
+vagrant ssh
 ```
 
-You finish the workshop, congrats! 🎉 
+## Well done 👍 move to main 
+https://github.com/arainho/secure-git-workshop
