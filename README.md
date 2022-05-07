@@ -8,20 +8,10 @@
 ## Setup options
 - In your laptop 💻
 - Or in a Linux Virtual Machine 🧵
-- Fork the repo and use GitHub Actions 🍴
 
-## Clone repo
-```bash
-git clone https://github.com/arainho/secure-git-workshop.git
-```
+## Challenges execution
+- locally in Laptop or VM
+- Or Forking the repository and use GitHub Actions 🍴
 
-## Define metadata for commits
-```bash
-git config user.name "Your Name"
-git config user.email "your@mail.com"
-```
-
-## Done 👍 move to step 1
-```bash
-git checkout step1
-```
+## Done 👍 move to setup
+let's [setup](https://github.com/arainho/secure-git-workshop/tree/setup)
