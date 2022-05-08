@@ -1,6 +1,6 @@
 ## secure-git workshop 🔓+🔑 = 🔐
 The current repository has several branches, each with a distinct challenge.    
-You can observe the several steps in the [workshop diagram](workshop_steps.png)   
+You can observe the several steps in the workshop diagram. [[+]](workshop_steps.png)   
 
 ### Starting points 🚗 
 1. The present repo is for demonstration purposes     
