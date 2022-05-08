@@ -1,8 +1,6 @@
-# secure-git-workshop
-
 ## step2 - pre-commit 🪝
 
-1. Install requirements for the present workshop are:    
+### 1. Install requirements for the present workshop are:    
 ```bash
 - Git
 - Docker 
@@ -11,7 +9,7 @@
 - bat (optional)
 ```
 
-2. Setup pre-commit hook
+### 2. Setup pre-commit hook
 ```
 - Our pre-commit hook will run a secret detection tool
 - The secret detection tool is called Talisman
@@ -28,7 +26,7 @@ Your done 👍 move to step 3
 git checkout step3
 ```
 
-## +info
+### +info
 Git hooks [+](https://githooks.com)    
 Talisman [+](https://github.com/thoughtworks/talisman#recommended-approach)   
 Secret detection tools[+](https://github.com/arainho/knowledge-base/tree/main/secret-detection)
