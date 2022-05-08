@@ -24,7 +24,7 @@ https://sonarcloud.io/projects/create
 For project key choose git-secure-workshop
 ```
 
-### 4. Setup Analysis
+### 4. Setup analysis
 ```
 https://sonarcloud.io/project/configuration?id=git-secure-workshop
 ```
