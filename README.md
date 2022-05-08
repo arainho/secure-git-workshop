@@ -1,5 +1,3 @@
-# secure-git-workshop
-
 ## step1 - gitignore 🐝
 
 1. Identify private and public data   👓 vs 🕶️   
