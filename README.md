@@ -1,40 +1,38 @@
-# secure-git-workshop
-
 ## step3 - software dependencies
 
-1. Enable dependency scanning
+### 1. Enable dependency scanning
 ```
 - Go to Settings -> Security -> Code security and analysis 
 - Enable Dependabot alerts
 - Enable Dependabot security updates
 ```
 
-2. Create dependabot yaml template
+### 2. Create dependabot yaml template
 ```
 - Copy dependabot.yml.sample to .github/dependabot.yml
 - identify your programming language(s)
 - Add correspondent package ecosystems 
 ```
 
-3. Define software out-dated libraries
+### 3. Define software out-dated libraries
 ```
 - create requirements.txt file
 - Define software outdated libraries (e.g. requests==2.23.0)
 ```
 
-4. Observe alerts and pull requests
+### 4. Observe alerts and pull requests
 ```
 - Wait some minutes
 - View and analyse the dependabot alerts
 - View and approve pull requests
 ```
 
-5. Run dependency scan locally
+### 5. Run dependency scan locally
 ```
 make dependency_scan
 ```
 
-Your done 👍 move to step 4
+### Your done 👍 move to step 4
 ```bash
 git checkout step4
 ```
