@@ -43,7 +43,7 @@ echo supersecrets.txt >> .gitignore
 echo "YOUR_FILE_WITH_SENSITIVE_DATA" >> .gitignore
 ```
 
-# 6. Purge file from all commits and branches
+### 6. Purge file from all commits and branches
 ```
 (bfg --delete-files supersecrets.txt | SENSITIVE_FILE=supersecrets.txt make delete)
 ```
