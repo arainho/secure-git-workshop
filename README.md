@@ -1,6 +1,4 @@
-# secure-git-workshop
-
-## step0 - starting point 💡
+## start - starting point 💡
 
 ## Clone repo
 ```bash
