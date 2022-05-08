@@ -1,4 +1,4 @@
-## step4 - dynamic analysis
+## step5 - dynamic analysis
 
 ### 1. Enable dynamic analysis
 ```
