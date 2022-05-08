@@ -1,4 +1,4 @@
-## step8 - wait, I commit a secret!
+## step7 - wait, I commit a secret!
 
 ### 0. Commit dummy secrets
 ```
