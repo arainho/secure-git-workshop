@@ -50,5 +50,5 @@ echo "YOUR_FILE_WITH_SENSITIVE_DATA" >> .gitignore
 
 ### Your done 👍 move to step8
 ```bash
-git checkout step9
+git checkout step8
 ```
