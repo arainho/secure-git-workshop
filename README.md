@@ -1,8 +1,6 @@
-# secure-git-workshop
-
 ## step10 - Leaks and breaches 
 
-### GitBleed
+### 1. GitBleed
 
 ```
 - people have accidentally checked GitHub credentials into GitHub commits
@@ -10,14 +8,14 @@
 ```
 More at [gitbleed](https://www.notgitbleed.com/gitbleed)
 
-### Bleed it locally ...
+### 2. Bleed it locally ...
 ```bash
 git config user.email "HARDCODED ... ⚡⚡⚡ secure-password"
 git config user.name "Gitbleed demo" 
 ```
 
-### Will I or my business be affected?
-#### 1. Manual approach
+### 3. Will I or my business be affected?
+#### 3.1. Manual approach
 Check current metadata (name + email)
 ```bash
 git config --get user.name        
@@ -30,7 +28,7 @@ git log | grep Author | grep -v @
 git log --pretty="%an <%ae>" | sort | uniq
 ```
 
-#### 2. Automated approach
+#### 3.2. Automated approach
 ```
 - Create a new dedicated CI/CD pipeline
 - Build a script that uses GitHub API
@@ -40,4 +38,4 @@ git log --pretty="%an <%ae>" | sort | uniq
 - Alert through email, slack
 ```
 
-You finish the workshop, congrats! 🎉 
+### You finish the workshop, congrats! 🎉 
