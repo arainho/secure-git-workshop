@@ -52,7 +52,7 @@ https://github.com/arainho/git-insecure-workshop/settings/secrets/actions
 - Verify existence of container in the Internet Archive, Wayback Machine 
 ```
 
-### Your done 👍 move to step 10 
+### Your done 👍 move to step 9
 ```bash
-git checkout step10
+git checkout step9
 ```
