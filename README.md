@@ -48,7 +48,7 @@ echo "YOUR_FILE_WITH_SENSITIVE_DATA" >> .gitignore
 (bfg --delete-files supersecrets.txt | SENSITIVE_FILE=supersecrets.txt make delete)
 ```
 
-### Your done 👍 move to step 9
+### Your done 👍 move to step8
 ```bash
 git checkout step9
 ```
