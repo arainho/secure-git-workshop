@@ -1,4 +1,4 @@
-## starting point 💡
+## start point 💡
 
 ## Clone repo
 ```bash
