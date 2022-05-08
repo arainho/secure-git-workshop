@@ -54,4 +54,4 @@ vagrant up --provider virtualbox
 vagrant ssh
 ```
 
-### let's [start](https://github.com/arainho/secure-git-workshop/tree/step1) [🚀](https://github.com/arainho/secure-git-workshop/tree/step1)
+### let's [start](https://github.com/arainho/secure-git-workshop/tree/start) [🚀](https://github.com/arainho/secure-git-workshop/tree/start)
