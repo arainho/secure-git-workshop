@@ -38,6 +38,12 @@ Open your terminal/console and verify that you have a `bash` or `zsh` shell.
 echo $SHELL
 ```
 
+3.2. Install the required packages
+```bash
+make setup
+make verify
+```
+
 3.2 A Linux VM  
 If you have a machine with MS Windows, this is the advised path to proceed.    
 All the software is pre-installed with the appropriate versions in the provided [Vagrant Box](Vagrantfile). 
