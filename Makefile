@@ -11,13 +11,14 @@ ifeq ($(shell uname -s),Linux)
 	PKG_SYSTEM=yum
 endif
 
-
-setup:
+fix_gitignore:
 	@if grep -r --color Makefile .gitignore; \
 	then \
 		sed -i $(EXTRA_ARG) 's/^Makefile/#Makefile/' .gitignore; \
 	fi
 	@grep -r --color Makefile .gitignore
+
+setup:
 	$(foreach var,$(PACKAGES),$(PKG_SYSTEM) install $(var);)
 
 versions:
