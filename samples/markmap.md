@@ -1,5 +1,11 @@
 # workshop steps
 
+## setup
+- `setup lab`🧰
+
+## start
+- `start point` 💡
+
 ## step1
 - `gitignore` 🐝
 
@@ -19,13 +25,10 @@
 - `container scanning`
 
 ## step7
-- `license scanning (optional)`
-
-## step8
 - `wait, I commit a secret!`
 
-## step9
+## step8
 - `wait, I upload a container with a secret!`
 
-## step10
+## step9
 - `leaks and breaches`
