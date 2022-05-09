@@ -11,7 +11,7 @@ ifeq ($(shell uname -s),Linux)
 	PKG_SYSTEM=yum
 endif
 
-fix_gitignore:
+fix_gi:
 	@if grep -r --color Makefile .gitignore; \
 	then \
 		sed -i $(EXTRA_ARG) 's/^Makefile/#Makefile/' .gitignore; \
@@ -19,7 +19,7 @@ fix_gitignore:
 	@grep -r --color Makefile .gitignore
 
 setup:
-	$(foreach var,$(PACKAGES),$(PKG_SYSTEM) install $(var);)
+	$(foreach var,$(PACKAGES),sudo $(PKG_SYSTEM) install $(var);)
 
 versions:
 	@git --version
