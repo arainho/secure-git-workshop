@@ -7,8 +7,8 @@ ifeq ($(shell uname -s),Darwin)
 endif
 
 ifeq ($(shell uname -s),Linux)
-	PKG_SYSTEM=apt
-	#PKG_SYSTEM=yum
+	#PKG_SYSTEM=apt
+	PKG_SYSTEM=yum
 endif
 
 
@@ -18,7 +18,7 @@ setup:
 		sed -i $(EXTRA_ARG) 's/^Makefile/#Makefile/' .gitignore; \
 	fi
 	@grep -r --color Makefile .gitignore
-	#$(foreach var,$(PACKAGES),$(PKG_SYSTEM) install $(var);)
+	$(foreach var,$(PACKAGES),$(PKG_SYSTEM) install $(var);)
 
 versions:
 	@git --version
