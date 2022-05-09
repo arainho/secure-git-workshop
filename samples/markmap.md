@@ -1,7 +1,7 @@
 # workshop steps
 
 ## setup
-- `setup lab`🧰
+- `setup lab` 🧰
 
 ## start
 - `start point` 💡
