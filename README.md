@@ -34,8 +34,6 @@ In terms of packages install the following:
 #### Option A - Your Laptop
 The adviced operating systems are _macOS or Linux_ with `bash` or `zsh` shell.    
 Open your terminal/console and install the required packages.   
-
-You can do it with:
 ```bash
 make setup
 make verify
@@ -51,10 +49,17 @@ https://www.virtualbox.org/wiki/Downloads
 https://www.vagrantup.com/downloads
 ```
 
-Start the lab with:
+Start the vagrant box with:
 ```bash
 vagrant up --provider virtualbox
 vagrant ssh
+```
+
+Install the required packages
+```bash
+cd /vagrant || exit
+make setup
+make verify
 ```
 
 ### let's [start](https://github.com/arainho/secure-git-workshop/tree/start) [🚀](https://github.com/arainho/secure-git-workshop/tree/start)
