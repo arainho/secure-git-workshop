@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
     dnf -y update
 
     # ntp and timezone
-    dnf install chrony
+    dnf -y install chrony
     systemctl enable chronyd
     systemctl start chronyd
     timedatectl set-timezone Europe/Lisbon
@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
     dnf -y install htop iftop iotop \
 	   strace just vim \
            bash zsh fish
-    dnf -y install git python3 jq curl make
+    dnf -y install git python3 jq curl make bat
 
     dnf -y install dnf-plugins-core
     dnf config-manager --add-repo \
