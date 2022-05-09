@@ -31,30 +31,27 @@ In terms of packages install the following:
 
 ### 3. Choose your machine
 
-3.1 Your Laptop
-The adviced operating systems are _macOS or Linux_. 
-Open your terminal/console and verify that you have a `bash` or `zsh` shell.  
-```bash
-echo $SHELL
-```
+#### Option A - Your Laptop
+The adviced operating systems are _macOS or Linux_ with `bash` or `zsh` shell.    
+Open your terminal/console and install the required packages.   
 
-3.2. Install the required packages
+You can do it with:
 ```bash
 make setup
 make verify
 ```
 
-3.2 A Linux VM  
-If you have a machine with MS Windows, this is the advised path to proceed.    
-All the software is pre-installed with the appropriate versions in the provided [Vagrant Box](Vagrantfile). 
+#### Option B - Linux VM  
+If you have a machine with MS Windows, this is the advised path to proceed.   
+All the software is pre-installed with the appropriate versions in the provided [Vagrant Box](Vagrantfile).     
 
-Download and install VirtualBox and Vagrant
+Download and install VirtualBox and Vagrant:
 ```
 https://www.virtualbox.org/wiki/Downloads
 https://www.vagrantup.com/downloads
 ```
 
-Start the lab with
+Start the lab with:
 ```bash
 vagrant up --provider virtualbox
 vagrant ssh
