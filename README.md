@@ -9,7 +9,7 @@
 
 ### 2. Create dependabot yaml template
 ```
-- Copy samples/dependabot.yml.sample to .github/dependabot.yml
+- Copy `samples/dependabot.yml.sample` to `.github/dependabot.yml`
 - Identify your programming language(s)
 - Add correspondent package ecosystems 
 ```
