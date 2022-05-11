@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 
-# importing all is less advised
+## importing all is less advised
 #import configparser
 #import sys
+#import os
 
-import requests
+from requests import get
 from sys import argv
 from configparser import ConfigParser
+from os import environ
 
+### Avoid files with secrets! ⚡⚡⚡ ☠️☠️☠️
 def get_api_key():
     config = ConfigParser()
     config.read('config.ini')
@@ -20,7 +23,7 @@ def get_base_url():
  
 def get_weather(base_url, api_key, city):
     url = "{base_url}/weather?q={location}&units=metric&appid={key}".format(base_url=base_url, location=city, key=api_key)
-    r = requests.get(url)
+    r = get(url)
     return r.json()
  
 def main():
@@ -28,7 +31,8 @@ def main():
         exit("Usage: {} CITY".format(argv[0]))
     city = argv[1]
  
-    api_key = get_api_key()
+    ### Use environment variables instead 😂😂😂
+    api_key = environ['API_KEY']
     base_url = get_base_url()
     weather = get_weather(base_url, api_key, city)
  
