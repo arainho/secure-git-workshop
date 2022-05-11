@@ -2,13 +2,13 @@ name: CI - Docker Image build and push
 
 on:
   push:
-    branches: [ step9 ]
+    branches: [ step8 ]
     paths:
      - 'Dockerfile'
      - '.dockerignore'
      - '.github/workflows/docker-image.yml'
   pull_request:
-    branches: [ step9 ]
+    branches: [ step8 ]
     paths:
      - 'Dockerfile'
      - '.dockerignore'
