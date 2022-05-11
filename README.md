@@ -6,7 +6,19 @@
 - We will use Aqua trivy and Anchore grype
 ```
 
-### 2. Run it
+### 2. Build the image
+```bash
+docker build -t git-insecure-workshop:v1 .
+```
+
+### 3. Spin up the container
+```bash
+read -s API_KEY
+docker run --env API_KEY="$API_KEY" git-insecure-workshop:v1
+```
+
+
+### 4. Run the container scanning
 ```bash
 make container_scanning
 ```
