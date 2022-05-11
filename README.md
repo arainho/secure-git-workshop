@@ -28,6 +28,12 @@ docker run --env API_KEY="$API_KEY" git-insecure-workshop:v1
 make container_scanning
 ```
 
+### 6. Storing and delivering secrets
+Articles with secret management alternatives (pros and cons)
+https://filip5114.github.io/ec2-user-data-secret/
+https://diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/
+https://medium.com/poka-techblog/the-best-way-to-store-secrets-in-your-app-is-not-to-store-secrets-in-your-app-308a6807d3ed
+
 ### Your done 👍 move to step 7
 ```bash
 git checkout step7
