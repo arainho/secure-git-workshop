@@ -9,14 +9,14 @@
 
 ### 2. Create dependabot yaml template
 ```
-- Copy dependabot.yml.sample to .github/dependabot.yml
-- identify your programming language(s)
+- Copy samples/dependabot.yml.sample to .github/dependabot.yml
+- Identify your programming language(s)
 - Add correspondent package ecosystems 
 ```
 
 ### 3. Define software out-dated libraries
 ```
-- create requirements.txt file
+- Create requirements.txt file
 - Define software outdated libraries (e.g. requests==2.23.0)
 ```
 
