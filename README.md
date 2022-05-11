@@ -11,14 +11,19 @@
 docker build -t git-insecure-workshop:v1 .
 ```
 
-### 3. Spin up the container
+### 3. Read the key to an environment variable
 ```bash
 read -s API_KEY
 docker run --env API_KEY="$API_KEY" git-insecure-workshop:v1
 ```
 
+### 4. Spin up the container
+```bash
+read -s API_KEY
+docker run --env API_KEY="$API_KEY" git-insecure-workshop:v1
+```
 
-### 4. Run the container scanning
+### 5. Run the container scanning
 ```bash
 make container_scanning
 ```
