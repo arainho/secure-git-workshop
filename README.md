@@ -31,6 +31,8 @@ In terms of packages you need the following:
 - bat (optional)
 ```
 
+If you don't have it already, you can follow [this](https://github.com/arainho/secure-git-workshop/blob/start/README.md#2-install-requirements)
+
 ### 3. Choose your machine
 
 #### Option A - Your Laptop
