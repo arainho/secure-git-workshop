@@ -23,9 +23,11 @@ Signup and create key for OpenWeatherMap
 In terms of packages install the following:
 ```
 - git
+- make
 - docker
 - python3	
-- jq, curl, make
+- curl
+- jq
 - bat (optional)
 ```
 
@@ -33,11 +35,6 @@ In terms of packages install the following:
 
 #### Option A - Your Laptop
 The adviced operating systems are _macOS or Linux_ with `bash` or `zsh` shell.    
-Open your terminal/console and install the required packages.   
-```bash
-make setup
-make verify
-```
 
 #### Option B - Linux VM  
 If you have a machine with MS Windows, this is the advised path to proceed.   
@@ -53,13 +50,6 @@ Start the vagrant box with:
 ```bash
 vagrant up --provider virtualbox
 vagrant ssh
-```
-
-Install the required packages
-```bash
-cd /vagrant || exit
-make setup
-make verify
 ```
 
 ### let's [start](https://github.com/arainho/secure-git-workshop/tree/start) [🚀](https://github.com/arainho/secure-git-workshop/tree/start)
