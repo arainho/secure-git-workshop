@@ -1,4 +1,4 @@
-### ci-demo ✨
+## ci-demo ✨
 
 ### 1. Check out the [ci-demo.yml](.github/workflows/ci-demo.yml)
 
