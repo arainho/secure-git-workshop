@@ -1,4 +1,4 @@
-## extra - additional notes
+## extra notes 👋
  
 ### Articles on storing, delivering, and managing secrets.
 - [ec2-user-data-secret ](https://filip5114.github.io/ec2-user-data-secret)   
