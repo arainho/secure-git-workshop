@@ -19,21 +19,7 @@ Signup and create key for OpenWeatherMap
 - https://home.openweathermap.org/api_keys)   
 ```
 
-### 2. Required software
-In terms of packages you need the following:
-```
-- git
-- make
-- docker
-- python3	
-- curl
-- jq
-- bat (optional)
-```
-
-If you don't have it already, you can follow [this](https://github.com/arainho/secure-git-workshop/blob/start/README.md#2-install-requirements)
-
-### 3. Choose your machine
+### 2. Choose your machine
 
 #### Option A - Your Laptop
 The adviced operating systems are _macOS or Linux_ with `bash` or `zsh` shell.    
