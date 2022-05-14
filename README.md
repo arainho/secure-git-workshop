@@ -20,7 +20,7 @@ Signup and create key for OpenWeatherMap
 ```
 
 ### 2. Required software
-In terms of packages install the following:
+In terms of packages you need the following:
 ```
 - git
 - make
