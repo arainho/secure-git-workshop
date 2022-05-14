@@ -1,4 +1,4 @@
-## step9 - Leaks and breaches 
+## step9 - Leaks
 
 ### 1. GitBleed
 
