@@ -1,0 +1,62 @@
+name: CI pipeline - demo
+on:
+  push:
+    branches:
+      - ci-demo
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+
+  setup:
+    name: setup job
+    runs-on: ubuntu-latest
+    steps:
+
+  start:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: github checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: install requirements
+        run: make setup
+      - name: verify requirements
+        run: make verify
+
+  step1:
+    needs: [setup, start]
+  
+  step2:
+    needs: [setup, start, step1]
+  
+  step3:
+    needs: [setup, start, step1, step2]
+    
+  step4:
+    name: step4
+    needs: [setup, start, step1, step2, step3]
+    runs-on: ubuntu-latest
+    steps:
+      - name: sonarcloud scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  step5:
+    needs: [setup, start, step1, step2, step3, step4]
+  
+  step6:
+    needs: [setup, start, step1, step2, step3, step4, step5]
+  
+  step7:
+    needs: [setup, start, step1, step2, step3, step4, step5, step6]
+  
+  step8:
+    needs: [setup, start, step1, step2, step3, step4, step5, step6, step7]
+  
+  step9:
+    needs: [setup, start, step1, step2, step3, step4, step5, step6, step7, step8]
