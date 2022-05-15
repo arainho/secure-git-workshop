@@ -19,30 +19,7 @@ Signup and create key for OpenWeatherMap
 - https://home.openweathermap.org/api_keys)   
 ```
 
-### 2. Install requirements
-In terms of tools you need the following:
-```
-- git
-- make
-- docker
-- python3	
-- curl
-- jq
-- bat (optional)
-```
-
-For git, make and docker go to:
-- https://git-scm.com/downloads
-- https://command-not-found.com/make
-- https://docs.docker.com/get-docker/
-
-
-For the remaining tools execute:
-```bash
-make verify || make setup
-```
-
-### 3. Choose your machine
+### 2. Choose your machine
 
 #### Option A - Your Laptop
 The adviced operating systems are _macOS or Linux_ with `bash` or `zsh` shell.    
@@ -61,6 +38,14 @@ Start the vagrant box with:
 ```bash
 vagrant up --provider virtualbox
 vagrant ssh
+```
+
+### 3. Install base requirements
+In terms of mandatory tools you need `git`, `make` and `docker`
+```
+- https://git-scm.com/downloads
+- https://command-not-found.com/make
+- https://docs.docker.com/get-docker/
 ```
 
 ### let's [start](https://github.com/arainho/secure-git-workshop/tree/start) [🚀](https://github.com/arainho/secure-git-workshop/tree/start)
