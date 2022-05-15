@@ -85,3 +85,6 @@ dependency_scan: dependency_scan_prepare
 	    --out /report
 	    # Use suppression like this: (where /src == $pwd)
 	    # --suppression "/src/security/dependency-check-suppression.xml"
+
+up:
+	docker-compose up -d
