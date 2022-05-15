@@ -22,7 +22,7 @@ jobs:
      - name: Clone the repository
        uses: actions/checkout@v2
        with:
-         fetch-depth: 1  # Shallow clones should be disabled for a better relevancy of analysis
+         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
      - name: Install requirements
        run: make verify || make setup
      - name: Define metadata for commits
