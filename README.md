@@ -11,15 +11,14 @@
 docker build -t git-insecure-workshop:v1 .
 ```
 
-### 3. Read the key to an environment variable
+### 3. Read the key to a local environment variable
+Use a local environment variable
 ```bash
 read -s API_KEY
-docker run --env API_KEY="$API_KEY" git-insecure-workshop:v1
-```
+``````
 
 ### 4. Spin up the container
 ```bash
-read -s API_KEY
 docker run --env API_KEY="$API_KEY" git-insecure-workshop:v1
 ```
 
