@@ -42,7 +42,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v2
         with:
-          name: my-artifact
+          name: git-artifact
       - name: Moving to step1
         run: git checkout step1
       - name: Add a line with config.ini in gitignore
