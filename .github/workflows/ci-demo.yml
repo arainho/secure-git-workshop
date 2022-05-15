@@ -1,12 +1,10 @@
 name: CI pipeline - demo
-
 on:
   push:
     branches:
       - ci-demo
   pull_request:
     types: [opened, synchronize, reopened]
-
 jobs:
   setup:
     name: Setup
