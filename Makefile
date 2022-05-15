@@ -7,8 +7,8 @@ ifeq ($(shell uname -s),Darwin)
 endif
 
 ifeq ($(shell uname -s),Linux)
-	#PKG_SYSTEM=apt
-	PKG_SYSTEM := yum
+	PKG_SYSTEM=apt
+	#PKG_SYSTEM := yum
 endif
 
 fix_gi:
