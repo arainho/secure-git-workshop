@@ -1,4 +1,5 @@
 name: CI pipeline - demo
+
 on:
   push:
     branches:
@@ -7,7 +8,6 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-
   setup:
     name: Setup
     runs-on: ubuntu-latest
@@ -16,7 +16,6 @@ jobs:
        run: apt -y install git make python3 curl jq bat
      - name: Check docker
        run: docker info || exit
-
   start:
     name: Start
     needs: setup
