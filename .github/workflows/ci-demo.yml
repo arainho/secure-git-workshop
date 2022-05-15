@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: Install requirements
-       run: apt -y install git make python3 curl jq bat
+       run: sudo apt-get install -y git make python3 curl jq bat
      - name: Check docker
        run: docker info || exit
   start:
