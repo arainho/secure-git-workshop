@@ -33,7 +33,7 @@ jobs:
        uses: actions/upload-artifact@v3
        with:
          name: repo-artifact
-         path: /home/runner/work/secure-git-workshop/
+         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
   step1:
     name: Step1
     runs-on: ubuntu-latest
