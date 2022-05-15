@@ -9,15 +9,19 @@ on:
 jobs:
 
   setup:
-    name: setup
+    name: Setup
     runs-on: ubuntu-latest
     steps:
-     - name: github checkout
+     - name: Clone repo
        uses: actions/checkout@v2
        with:
         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-     - name: install requirements
+     - name: Install requirements
        run: make verify || make setup
+     - name: Define metadata for commits
+       run: |
+        git config user.name "Your Name"
+        git config user.email "your@mail.com"
 
   start:
     name: start
