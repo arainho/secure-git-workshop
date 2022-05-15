@@ -80,7 +80,7 @@ jobs:
      - name: Moving to step1
        run: git checkout step1
      - name: Install talisman as a pre-commit hook
-       run: make talisman_setup
+       run: TERM=xterm make talisman_setup
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
