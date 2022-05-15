@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-PACKAGES = git python3 jq curl
+PACKAGES = git make python3 curl jq bat
 
 ifeq ($(shell uname -s),Darwin)
 	PKG_SYSTEM=brew
