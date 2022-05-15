@@ -58,22 +58,54 @@ jobs:
         run: |
           grep -r --color config.ini .gitignore | grep -v "#"
           git check-ignore -v config.ini
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: repo-artifact
+          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: repo-artifact
+          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
   step2:
     name: Step2
     runs-on: ubuntu-latest
     needs: [setup, start, step1]
     steps:
+     - name: Download artifacts
+       uses: actions/download-artifact@v2
+       with:
+         name: repo-artifact
      - name: Moving to step1
        run: git checkout step1
-     - name: Running step
-       run: echo "..."
+     - name: Install talisman as a pre-commit hook
+       run: make talisman_setup
+     - name: Upload artifacts
+       uses: actions/upload-artifact@v3
+       with:
+         name: repo-artifact
+         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
   step3:
     name: Step3
     runs-on: ubuntu-latest
     needs: [setup, start, step1, step2]
     steps:
-     - name: Running step
-       run: echo "..."
+     - name: Download artifacts
+       uses: actions/download-artifact@v2
+       with:
+         name: repo-artifact
+     - name: Create dependabot yaml template
+       run: cp -av samples/dependabot.yml.sample .github/dependabot.yml 
+     - name: Define software out-dated libraries
+       run: echo "requests==2.23.0" > requirements.txt
+     - name: Run dependency scan locally
+       run: make dependency_scan 
+     - name: Upload artifacts
+       uses: actions/upload-artifact@v3
+       with:
+         name: repo-artifact
+         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
   step4:
     name: Step4
     runs-on: ubuntu-latest
@@ -89,33 +121,78 @@ jobs:
     runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4]
     steps:
+     - name: Download artifacts
+       uses: actions/download-artifact@v2
+       with:
+         name: repo-artifact
      - name: Running step
        run: echo "..."
+     - name: Upload artifacts
+       uses: actions/upload-artifact@v3
+       with:
+         name: repo-artifact
+         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
   step6:
     name: Step6
     runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4, step5]
     steps:
+     - name: Download artifacts
+       uses: actions/download-artifact@v2
+       with:
+         name: repo-artifact
      - name: Running step
        run: echo "..."
+     - name: Upload artifacts
+       uses: actions/upload-artifact@v3
+       with:
+         name: repo-artifact
+         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
   step7:
     name: Step7
     runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4, step5, step6]
     steps:
+     - name: Download artifacts
+       uses: actions/download-artifact@v2
+       with:
+         name: repo-artifact
      - name: Running step
        run: echo "..."
+     - name: Upload artifacts
+       uses: actions/upload-artifact@v3
+       with:
+         name: repo-artifact
+         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
   step8:
     name: Step8
     runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4, step5, step6, step7]
     steps:
+     - name: Download artifacts
+       uses: actions/download-artifact@v2
+       with:
+         name: repo-artifact
      - name: Running step
        run: echo "..."
+     - name: Upload artifacts
+       uses: actions/upload-artifact@v3
+       with:
+         name: repo-artifact
+         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
   step9:
     name: Step9
     runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4, step5, step6, step7, step8]
     steps:
+     - name: Download artifacts
+       uses: actions/download-artifact@v2
+       with:
+         name: repo-artifact
      - name: Running step
        run: echo "..."
+     - name: Upload artifacts
+       uses: actions/upload-artifact@v3
+       with:
+         name: repo-artifact
+         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
