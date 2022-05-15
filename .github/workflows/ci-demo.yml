@@ -29,7 +29,6 @@ jobs:
        run: |
          git config user.name "Your Name"
          git config user.email "your@mail.com"
-         pwd
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
@@ -47,6 +46,7 @@ jobs:
       - name: Moving to step1
         run: |
           pwd
+          ls -la
           git checkout step1
       - name: Add a line with config.ini in gitignore
         run: |
