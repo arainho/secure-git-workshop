@@ -29,12 +29,12 @@ jobs:
        run: |
          git config user.name "Your Name"
          git config user.email "your@mail.com"
-         git log
+         pwd
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
          name: repo-artifact
-         path: $PWD 
+         path: /home/runner/work/secure-git-workshop/
   step1:
     name: Step1
     runs-on: ubuntu-latest
