@@ -18,7 +18,7 @@ jobs:
        run: docker info || exit
 
   start:
-    name: start
+    name: Start
     needs: setup
     runs-on: ubuntu-latest
     steps:
@@ -34,19 +34,41 @@ jobs:
         git config user.email "your@mail.com"
 
   step1:
+    name: Step1
     runs-on: ubuntu-latest
     needs: [setup, start]
-  
+    steps:
+     - name: Add a line with config.ini in gitignore
+       run: |
+        sed -i -- 's/#config.ini/config.ini/g' .gitignore
+        #echo config.ini >> .gitignore
+     - name: Create and fill out config.ini file locally
+       run: cp -v samples/config.ini.sample config.ini
+     - name: Ensure that the private config.ini is ignored
+       run: |
+        grep -r --color config.ini .gitignore | grep -v "#"
+        git check-ignore -v config.ini
+
   step2:
+    name: Step2
+    runs-on: ubuntu-latest
     needs: [setup, start, step1]
+    steps:
+     - name: ...
+       run: echo "..."
   
   step3:
-    needs: [setup, start, step1, step2]
-    
-  step4:
-    name: step4
-    needs: [setup, start, step1, step2, step3]
+    name: Step3
     runs-on: ubuntu-latest
+    needs: [setup, start, step1, step2]
+    steps:
+     - name: ...
+       run: echo "..."
+
+  step4:
+    name: Step4
+    runs-on: ubuntu-latest
+    needs: [setup, start, step1, step2, step3]
     steps:
       - name: sonarcloud scan
         uses: SonarSource/sonarcloud-github-action@master
@@ -55,16 +77,41 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   step5:
+    name: Step5
+    runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4]
+    steps:
+   - name: ...
+     run: echo "..."
   
   step6:
+    name: Step6
+    runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4, step5]
+    steps:
+   - name: ...
+     run: echo "..."
   
   step7:
+    name: Step7
+    runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4, step5, step6]
-  
+    steps:
+   - name: ...
+     run: echo "..."
+ 
   step8:
+    name: Step8
+    runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4, step5, step6, step7]
+    steps:
+   - name: ...
+     run: echo "..."
   
   step9:
+    name: Step9
+    runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4, step5, step6, step7, step8]
+    steps:
+   - name: ...
+     run: echo "..."
