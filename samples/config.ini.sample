@@ -1,0 +1,5 @@
+[example_api]
+base_url = http://api.example.com/v1/
+
+; possible secret hardcoded! ⚡⚡⚡☠️☠️☠️
+api_key = your_api_key
