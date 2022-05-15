@@ -45,7 +45,9 @@ jobs:
         with:
           name: repo-artifact
       - name: Moving to step1
-        run: git checkout step1
+        run: |
+          pwd
+          git checkout step1
       - name: Add a line with config.ini in gitignore
         run: |
           sed -i -- 's/#config.ini/config.ini/g' .gitignore
