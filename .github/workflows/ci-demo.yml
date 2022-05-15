@@ -12,6 +12,16 @@ jobs:
     name: Setup
     runs-on: ubuntu-latest
     steps:
+     - name: Install requirements
+       run: apt -y install git make python3 curl jq bat
+     - name: Check docker
+       run: docker info || exit
+
+  start:
+    name: start
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
      - name: Clone repo
        uses: actions/checkout@v2
        with:
@@ -22,14 +32,6 @@ jobs:
        run: |
         git config user.name "Your Name"
         git config user.email "your@mail.com"
-
-  start:
-    name: start
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: start
-        run: echo "..."
 
   step1:
     runs-on: ubuntu-latest
