@@ -40,12 +40,26 @@ vagrant up --provider virtualbox
 vagrant ssh
 ```
 
-### 3. Install base requirements
-In terms of mandatory tools you need `git`, `make` and `docker`
+### 3. Install requirements
+The required tools are the following:
+```
+- git *
+- make *
+- docker *
+- python3	
+- curl
+- jq
+- bat (optional)
+```
+
+Download and install git, make, docker, python, curl and jq:
 ```
 - https://git-scm.com/downloads
 - https://command-not-found.com/make
 - https://docs.docker.com/get-docker/
+- https://www.python.org/downloads/
+- https://command-not-found.com/curl
+- https://command-not-found.com/jq
 ```
 
 ### let's [start](https://github.com/arainho/secure-git-workshop/tree/start) [🚀](https://github.com/arainho/secure-git-workshop/tree/start)
