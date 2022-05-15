@@ -9,24 +9,26 @@ on:
 jobs:
 
   setup:
-    name: setup job
+    name: setup
     runs-on: ubuntu-latest
     steps:
+     - name: github checkout
+       uses: actions/checkout@v2
+       with:
+        fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+     - name: install requirements
+       run: make verify || make setup
 
   start:
+    name: start
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      - name: github checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: install requirements
-        run: make setup
-      - name: verify requirements
-        run: make verify
+      - name: start
+        run: echo "..."
 
   step1:
+    runs-on: ubuntu-latest
     needs: [setup, start]
   
   step2:
