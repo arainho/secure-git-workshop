@@ -38,6 +38,8 @@ jobs:
        uses: actions/checkout@v2
        with:
          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+     - name: Moving to start
+       run: git checkout start
      - name: Install requirements
        run: make verify || make setup
      - name: Define metadata for commits
@@ -273,8 +275,8 @@ jobs:
          name: repo-artifact
      - name: Moving to step8
        run: git checkout step8
-     - name: Running step
-       run: echo "..."
+     - name: Identify your secret
+       run: make secret_detection
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
@@ -292,8 +294,21 @@ jobs:
          name: repo-artifact
      - name: Moving to step9
        run: git checkout step9
-     - name: Running step
-       run: echo "..."
+     - name: Bleed it locally ...
+       run: |
+         git config user.email "HARDCODED ... ⚡⚡⚡ secure-password"
+         git config user.name "Gitbleed demo" 
+     - name: Will I or my business be affected?
+       run: |
+         echo "Check current metadata (name + email)"
+         git config --get user.name        
+         git config --get user.email
+         echo;
+         echo "Check metadata history"
+         git log | grep Author | grep -v @
+         git log --pretty="%an <%ae>" | sort | uniq
+     - name: You finish the workshop ...
+       run: echo "congrats! 🎉"
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
