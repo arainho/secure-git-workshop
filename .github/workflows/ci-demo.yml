@@ -1,11 +1,25 @@
 name: CI pipeline - demo
+
 on:
   push:
     branches:
       - ci-demo
+      - setup
+      - start
+      - step1
+      - step2
+      - step3
+      - step4
+      - step5
+      - step6
+      - step7
+      - step8
+      - step9
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
+
   setup:
     name: Setup
     runs-on: ubuntu-latest
@@ -14,6 +28,7 @@ jobs:
        run: sudo apt-get install -y git make python3 curl jq bat
      - name: Check docker
        run: docker info || exit
+
   start:
     name: Start
     needs: setup
@@ -34,6 +49,7 @@ jobs:
        with:
          name: repo-artifact
          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+
   step1:
     name: Step1
     runs-on: ubuntu-latest
@@ -44,10 +60,7 @@ jobs:
         with:
           name: repo-artifact
       - name: Moving to step1
-        run: |
-          pwd
-          ls -la
-          git checkout step1
+        run: git checkout step1
       - name: Add a line with config.ini in gitignore
         run: |
           sed -i -- 's/#config.ini/config.ini/g' .gitignore
@@ -68,6 +81,7 @@ jobs:
         with:
           name: repo-artifact
           path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+
   step2:
     name: Step2
     runs-on: ubuntu-latest
@@ -77,8 +91,8 @@ jobs:
        uses: actions/download-artifact@v2
        with:
          name: repo-artifact
-     - name: Moving to step1
-       run: git checkout step1
+     - name: Moving to step2
+       run: git checkout step2
      - name: Install talisman as a pre-commit hook
        run: TERM=xterm make talisman_setup
      - name: Upload artifacts
@@ -86,6 +100,7 @@ jobs:
        with:
          name: repo-artifact
          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+ 
   step3:
     name: Step3
     runs-on: ubuntu-latest
@@ -95,6 +110,8 @@ jobs:
        uses: actions/download-artifact@v2
        with:
          name: repo-artifact
+     - name: Moving to step3
+       run: git checkout step3
      - name: Create dependabot yaml template
        run: cp -av samples/dependabot.yml.sample .github/dependabot.yml 
      - name: Define software out-dated libraries
@@ -106,48 +123,114 @@ jobs:
        with:
          name: repo-artifact
          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+
   step4:
     name: Step4
     runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3]
     steps:
-      - name: sonarcloud scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+     - name: Download artifacts
+       uses: actions/download-artifact@v2
+       with:
+         name: repo-artifact
+     - name: Moving to step5
+       run: git checkout step5
+     - name: Sonarcloud scan
+       uses: SonarSource/sonarcloud-github-action@master
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+     - name: Upload artifacts
+       uses: actions/upload-artifact@v3
+       with:
+         name: repo-artifact
+         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+
   step5:
     name: Step5
     runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4]
+    env:
+      ENV: "dev"
+      DELETE_FLAG: "true"
+      TARGET_API_DEF: "py-web/openapi.json"
+      API_REPORT_FILE: "api_report.json"
+      CONTAINER_NAME: "zap2docker_scan"
+      APP_DIR: "rest-api-goat"
+      REPORT_FOLDER: "reports"
     steps:
      - name: Download artifacts
        uses: actions/download-artifact@v2
        with:
          name: repo-artifact
-     - name: Running step
-       run: echo "..."
+     - name: Moving to step5
+       run: git checkout step5
+     - name: Cleanup docker-compose data
+       run: |-
+         pushd "${{env.APP_DIR}}"
+         if [ "${{env.DELETE_FLAG}}" == "true" ]
+         then
+           docker-compose rm -f web
+           docker-compose rm -f py-web
+           docker-compose rm -f zap2docker
+         fi
+         popd
+     - name: Run REST API Goat
+       run: |-
+         pushd "${{env.APP_DIR}}"
+         docker-compose build --no-cache web
+         docker-compose up -d web
+         docker-compose logs web
+         popd
+     - name: Serve Goat OpenAPI definition
+       run: |-
+         pushd "${{env.APP_DIR}}"
+         docker-compose build --no-cache py-web
+         docker-compose up -d py-web
+         docker-compose logs py-web
+         popd
+     - name: Launch API scan
+       env:
+         GOAT_API_TOKEN: ${{ secrets.GOAT_API_TOKEN }}
+       run: |-
+         pushd "${{env.APP_DIR}}"
+         test -d "${REPORT_FOLDER}" || mkdir -p "${REPORT_FOLDER}"
+         docker-compose run --name "${{env.CONTAINER_NAME}}" -d -e ENV="${{env.ENV}}" -e REPORT_FILE="${{env.API_REPORT_FILE}}" -e TARGET="${{env.API_TARGET}}" zap2docker
+         docker logs -f "${{env.CONTAINER_NAME}}"
+         popd
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
          name: repo-artifact
          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+
   step6:
     name: Step6
     runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4, step5]
+    env:
+      API_KEY: ${{ secrets.API_KEY }}
     steps:
      - name: Download artifacts
        uses: actions/download-artifact@v2
        with:
          name: repo-artifact
-     - name: Running step
-       run: echo "..."
+     - name: Moving to step6
+       run: git checkout step6
+     - name: Build the image
+       run: docker build -t git-insecure-workshop:v1 .
+     - name: Read the key into a local environment variable
+       run: API_KEY="${{env.API_KEY}}"
+     - name: Spin up the container
+       run: docker run --env API_KEY="${API_KEY}" git-insecure-workshop:v1       
+     - name: Run the container scanning
+       run: make container_scanning
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
          name: repo-artifact
          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+
   step7:
     name: Step7
     runs-on: ubuntu-latest
@@ -157,13 +240,28 @@ jobs:
        uses: actions/download-artifact@v2
        with:
          name: repo-artifact
-     - name: Running step
-       run: echo "..."
+     - name: Moving to step7
+       run: git checkout step7
+     - name: Commit dummy secrets
+       run: |
+         echo username:password | rev >> supersecrets.txt
+         echo AKIAIOSFODNN7EXAMPLE | rev >> supersecrets.txt
+     - name: Remove a file or any content with the secret
+       run: |
+         rm -- "supersecrets.txt"
+         make fix
+     - name: Prevent future commits
+       run: |
+         echo supersecrets.txt >> .gitignore
+         echo "YOUR_FILE_WITH_SENSITIVE_DATA" >> .gitignore
+     - name: Purge file from all commits and branches
+       run: (bfg --delete-files supersecrets.txt | SENSITIVE_FILE=supersecrets.txt make delete)
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
          name: repo-artifact
          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+
   step8:
     name: Step8
     runs-on: ubuntu-latest
@@ -173,6 +271,8 @@ jobs:
        uses: actions/download-artifact@v2
        with:
          name: repo-artifact
+     - name: Moving to step8
+       run: git checkout step8
      - name: Running step
        run: echo "..."
      - name: Upload artifacts
@@ -180,6 +280,7 @@ jobs:
        with:
          name: repo-artifact
          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+
   step9:
     name: Step9
     runs-on: ubuntu-latest
@@ -189,6 +290,8 @@ jobs:
        uses: actions/download-artifact@v2
        with:
          name: repo-artifact
+     - name: Moving to step9
+       run: git checkout step9
      - name: Running step
        run: echo "..."
      - name: Upload artifacts
