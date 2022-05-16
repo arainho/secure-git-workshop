@@ -96,7 +96,9 @@ jobs:
      - name: Moving to step2
        run: git checkout step2
      - name: Install talisman as a pre-commit hook
-       run: TERM=xterm make talisman_setup
+       run: |
+         TERM=xterm make talisman_setup
+         ls -la samples/
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
@@ -113,7 +115,9 @@ jobs:
        with:
          name: repo-artifact
      - name: Moving to step3
-       run: git checkout step3
+       run: |
+         ls -la samples/
+         git checkout step3
      - name: Create dependabot yaml template
        run: cp -av samples/dependabot.yml.sample .github/dependabot.yml 
      - name: Define software out-dated libraries
