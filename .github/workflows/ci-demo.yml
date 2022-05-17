@@ -116,8 +116,8 @@ jobs:
          name: repo-artifact
      - name: Moving to step3
        run: |
-         ls -la samples/
-         git checkout step3
+         git status
+         git checkout step3 -f
      - name: Create dependabot yaml template
        run: cp -av samples/dependabot.yml.sample .github/dependabot.yml 
      - name: Define software out-dated libraries
