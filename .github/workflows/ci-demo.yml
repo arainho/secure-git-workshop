@@ -139,8 +139,10 @@ jobs:
        uses: actions/download-artifact@v2
        with:
          name: repo-artifact
-     - name: Moving to step5
-       run: git checkout step5
+     - name: Moving to step4
+       run: |
+         git status
+         git checkout step4 -f
      - name: Sonarcloud scan
        uses: SonarSource/sonarcloud-github-action@master
        env:
@@ -170,7 +172,9 @@ jobs:
        with:
          name: repo-artifact
      - name: Moving to step5
-       run: git checkout step5
+       run: |
+         git status
+         git checkout step5 -f
      - name: Cleanup docker-compose data
        run: |-
          pushd "${{env.APP_DIR}}"
@@ -222,7 +226,9 @@ jobs:
        with:
          name: repo-artifact
      - name: Moving to step6
-       run: git checkout step6
+       run: |
+         git status
+         git checkout step6 -f
      - name: Build the image
        run: docker build -t git-insecure-workshop:v1 .
      - name: Read the key into a local environment variable
@@ -247,7 +253,9 @@ jobs:
        with:
          name: repo-artifact
      - name: Moving to step7
-       run: git checkout step7
+       run: |
+         git status
+         git checkout step7 -f
      - name: Commit dummy secrets
        run: |
          echo username:password | rev >> supersecrets.txt
@@ -278,7 +286,9 @@ jobs:
        with:
          name: repo-artifact
      - name: Moving to step8
-       run: git checkout step8
+       run: |
+         git status
+         git checkout step8 -f
      - name: Identify your secret
        run: make secret_detection
      - name: Upload artifacts
@@ -297,7 +307,9 @@ jobs:
        with:
          name: repo-artifact
      - name: Moving to step9
-       run: git checkout step9
+       run: |
+         git status
+         git checkout step9 -f
      - name: Bleed it locally ...
        run: |
          git config user.email "HARDCODED ... ⚡⚡⚡ secure-password"
