@@ -230,11 +230,11 @@ jobs:
          git status
          git checkout step6 -f
      - name: Build the image
-       run: docker build -t git-insecure-workshop:v1 .
+       run: make build
      - name: Read the key into a local environment variable
        run: API_KEY="${{env.API_KEY}}"
      - name: Spin up the container
-       run: docker run --env API_KEY="${API_KEY}" git-insecure-workshop:v1       
+       run: API_KEY="${API_KEY}" make run       
      - name: Run the container scanning
        run: make container_scanning
      - name: Upload artifacts
