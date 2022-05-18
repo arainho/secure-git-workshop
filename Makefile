@@ -10,6 +10,9 @@ TRUFFLEHOG_REPORT ?= trufflehog_report.json
 SHHGIT_CONFIG_FILE ?= "config.yaml"
 
 build:
+	docker build -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) .
+
+rebuild:
 	docker build --no-cache -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) .
 
 run: build
