@@ -4,6 +4,7 @@ on:
   push:
     branches: [ step6 ]
     paths:
+     - 'Makefile'
      - 'Dockerfile'
      - '.dockerignore'
      - '.github/workflows/app-build.yml'
