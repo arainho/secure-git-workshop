@@ -3,8 +3,7 @@
 ### 1. Enable container scanning
 ```
 - Tools that scan outdated dependencies and packages inside containers
-- We will use a tool called trivy from Aqua Security
-- There are other options such as grype from Anchore
+- We will use trivy from Aqua Security
 ```
 
 ### 2. Build the image
