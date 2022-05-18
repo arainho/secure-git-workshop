@@ -11,23 +11,23 @@
 make build
 ```
 
-### 3. Read the key to a local environment variable
-Use a local environment variable
+### 3. Test the app locally (optional)
+Read the key to a local environment variable
 ```bash
 read -s API_KEY
 ``````
 
-### 4. Test the app locally
+Test the app locally
 ```bash
 API_KEY="${API_KEY}" python3 get_wheather.py Aveiro
 ```
 
-### 5. Spin up the container
+Spin up the app inside a container
 ```bash
 API_KEY="${API_KEY}" make run
 ```
 
-### 6. Run the container scanning
+### 4. Run the container scanning
 We will use the [trivy](https://github.com/aquasecurity/trivy) tool. 
 However, you can use [grype](https://github.com/anchore/grype) running inside a github action. [[+]](https://github.com/marketplace/actions/anchore-container-scan)
 ```bash
