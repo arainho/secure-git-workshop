@@ -23,6 +23,7 @@ def get_base_url():
  
 def get_weather(base_url, api_key, city):
     url = "{base_url}/weather?q={location}&units=metric&appid={key}".format(base_url=base_url, location=city, key=api_key)
+    print("url:", url)
     r = get(url)
     return r.json()
  
