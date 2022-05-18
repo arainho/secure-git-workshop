@@ -1,0 +1,43 @@
+name: CI - Build app container
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+     - 'Dockerfile'
+     - '.dockerignore'
+     - '.github/workflows/build.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+     - 'Dockerfile'
+     - '.dockerignore'
+     - '.github/workflows/build.yml'
+
+jobs:
+  step6:
+    runs-on: ubuntu-latest
+    env:
+      API_KEY: ${{ secrets.OPEN_WHEATHER_API }}
+    steps:
+     - name: Download artifacts
+       uses: actions/download-artifact@v2
+       with:
+         name: repo-artifact
+     - name: Moving to step6
+       run: |
+         git status
+         git checkout step6 -f
+     - name: Build the image
+       run: make build
+     - name: Read the key into a local environment variable
+       run: API_KEY="${{env.API_KEY}}"
+     - name: Spin up the container
+       run: API_KEY="${env.API_KEY}" make run       
+     - name: Run the container scanning
+       run: make container_scanning
+     - name: Upload artifacts
+       uses: actions/upload-artifact@v3
+       with:
+         name: repo-artifact
+         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
