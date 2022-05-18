@@ -8,7 +8,7 @@
 
 ### 2. Build the image
 ```bash
-docker build -t git-insecure-workshop:v1 .
+docker build -t localbuild/git-insecure-workshop:v1 .
 ```
 
 ### 3. Read the key to a local environment variable
@@ -17,12 +17,17 @@ Use a local environment variable
 read -s API_KEY
 ``````
 
-### 4. Spin up the container
+### 4. Test the app locally
 ```bash
-docker run --env API_KEY="$API_KEY" git-insecure-workshop:v1
+API_KEY=$API_KEY python3 get_wheather.py Aveiro
 ```
 
-### 5. Run the container scanning
+### 5. Spin up the container
+```bash
+docker run --env API_KEY="$API_KEY" localbuild/git-insecure-workshop:v1
+```
+
+### 6. Run the container scanning
 We will use the [trivy](https://github.com/aquasecurity/trivy) tool. 
 However, you can use [grype](https://github.com/anchore/grype) running inside a github action. [[+]](https://github.com/marketplace/actions/anchore-container-scan)
 ```bash
