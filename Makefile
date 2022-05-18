@@ -16,7 +16,7 @@ rebuild:
 	docker build --no-cache -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) .
 
 run: build
-	docker run --rm -it --env API_KEY="${API_KEY}" $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) $(CITY)
+	docker run --rm -it --env API_KEY=$(API_KEY) $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) $(CITY)
 
 container_scanning: audit_trivy
 
