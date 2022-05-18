@@ -35,4 +35,3 @@ audit_trivy:
 		   -v $(HOME)/.cache:/root/.cache/ aquasec/trivy \
 		   image --severity=HIGH,CRITICAL \
 		   $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG)
-
