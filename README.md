@@ -8,7 +8,7 @@
 
 ### 2. Build the image
 ```bash
-docker build -t localbuild/git-insecure-workshop:v1 .
+make build
 ```
 
 ### 3. Read the key to a local environment variable
@@ -19,12 +19,12 @@ read -s API_KEY
 
 ### 4. Test the app locally
 ```bash
-API_KEY=$API_KEY python3 get_wheather.py Aveiro
+API_KEY="${API_KEY}" python3 get_wheather.py Aveiro
 ```
 
 ### 5. Spin up the container
 ```bash
-docker run --env API_KEY="$API_KEY" localbuild/git-insecure-workshop:v1
+API_KEY="${API_KEY}" make run
 ```
 
 ### 6. Run the container scanning
