@@ -23,6 +23,7 @@ docker run --env API_KEY="$API_KEY" git-insecure-workshop:v1
 ```
 
 ### 5. Run the container scanning
+We will use the [trivy](https://github.com/aquasecurity/trivy) tool from Aqua. However, you can use other tools such as [grype](https://github.com/anchore/grype) from Anchore [[+]](https://github.com/marketplace/actions/anchore-container-scan)
 ```bash
 make container_scanning
 ```
