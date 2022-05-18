@@ -2,13 +2,13 @@ name: CI - Build app container
 
 on:
   push:
-    branches: [ main ]
+    branches: [ step6 ]
     paths:
      - 'Dockerfile'
      - '.dockerignore'
      - '.github/workflows/build.yml'
   pull_request:
-    branches: [ main ]
+    branches: [ step6 ]
     paths:
      - 'Dockerfile'
      - '.dockerignore'
