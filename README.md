@@ -3,7 +3,8 @@
 ### 1. Enable container scanning
 ```
 - Tools that scan outdated dependencies and packages inside containers
-- We will use Aqua trivy and Anchore grype
+- We will use a tool called trivy from Aqua Security
+- There are other options such as grype from Anchore
 ```
 
 ### 2. Build the image
@@ -23,7 +24,8 @@ docker run --env API_KEY="$API_KEY" git-insecure-workshop:v1
 ```
 
 ### 5. Run the container scanning
-We will use the [trivy](https://github.com/aquasecurity/trivy) tool from Aqua. However, you can use other tools such as [grype](https://github.com/anchore/grype) from Anchore [[+]](https://github.com/marketplace/actions/anchore-container-scan)
+We will use the [trivy](https://github.com/aquasecurity/trivy) tool. 
+However, you can use [grype](https://github.com/anchore/grype) running inside a github action. [[+]](https://github.com/marketplace/actions/anchore-container-scan)
 ```bash
 make container_scanning
 ```
