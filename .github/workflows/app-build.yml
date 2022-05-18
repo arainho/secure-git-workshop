@@ -6,13 +6,13 @@ on:
     paths:
      - 'Dockerfile'
      - '.dockerignore'
-     - '.github/workflows/build.yml'
+     - '.github/workflows/app-build.yml'
   pull_request:
     branches: [ step6 ]
     paths:
      - 'Dockerfile'
      - '.dockerignore'
-     - '.github/workflows/build.yml'
+     - '.github/workflows/app-build.yml'
 
 jobs:
   step6:
