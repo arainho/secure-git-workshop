@@ -235,7 +235,9 @@ jobs:
      - name: Build the image
        run: make build
      - name: Read the key into a local environment variable
-       run: API_KEY="${{env.API_KEY}}"
+       run: |
+        - API_KEY="${{env.API_KEY}}"
+        - echo $API_KEY
      - name: Spin up the container
        run: API_KEY="${{env.API_KEY}}" make run       
      - name: Run the container scanning
