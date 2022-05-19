@@ -20,6 +20,7 @@ WORKDIR /app
 
 # Add only what we need 😉
 COPY ./requirements.txt requirements.txt
+COPY ./get_wheather.py get_wheather.py
 RUN python -m pip install --upgrade pip && \
     python -m pip install -r requirements.txt
 
