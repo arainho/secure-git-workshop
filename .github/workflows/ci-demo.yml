@@ -296,6 +296,22 @@ jobs:
          git checkout step8 -f
      - name: Identify your secret
        run: make secret_detection
+     - name: Set up QEMU
+       uses: docker/setup-qemu-action@v1
+     - name: Set up Docker Buildx
+       uses: docker/setup-buildx-action@v1
+     - name: Login to DockerHub
+       uses: docker/login-action@v1 
+       with:
+         username: ${{ secrets.DOCKERHUB_USERNAME }}
+         password: ${{ secrets.DOCKERHUB_TOKEN }}
+     - name: Build and push
+       id: docker_build
+       uses: docker/build-push-action@v2
+       with:
+         file: Dockerfile
+         push: true
+         tags: arainho/git-insecure-workshop:latest
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
