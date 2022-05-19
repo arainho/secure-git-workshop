@@ -15,6 +15,9 @@ on:
       - step7
       - step8
       - step9
+    paths:
+      - '*.*'
+      - '!README-md'
   pull_request:
     types: [opened, synchronize, reopened]
 
