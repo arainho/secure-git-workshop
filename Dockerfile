@@ -23,4 +23,4 @@ COPY ./requirements.txt requirements.txt
 RUN python -m pip install --upgrade pip && \
     python -m pip install -r requirements.txt
 
-ENTRYPOINT [ "python3", "get_wheather.py"]
+ENTRYPOINT [ "python3", "get_wheather.py" ]
