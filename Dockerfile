@@ -19,6 +19,7 @@ USER $APP_USER
 WORKDIR /app
 
 # Add only what we need 😉
+COPY ./config.ini config.ini
 COPY ./requirements.txt requirements.txt
 COPY ./get_wheather.py get_wheather.py
 RUN python -m pip install --upgrade pip && \
