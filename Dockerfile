@@ -1,5 +1,6 @@
-# The latest image
-FROM python:slim-buster
+# pros and cons of pinning image version 🤔
+# FROM docker.io/python:slim-buster
+FROM docker.io/python@sha256:9998bdce4f636c8922240100b2692482bfc7865a5ac6e89026f4d7af99695e65
 
 LABEL org.opencontainers.image.authors="arainho.it@gmail.com"
 LABEL org.opencontainers.image.description="git-insecure-workshop"
@@ -8,9 +9,9 @@ LABEL org.opencontainers.image.description="git-insecure-workshop"
 ENV APP_USER="appuser"
 ENV APP_GROUP="appgroup"
 ENV APP_LOCATION="/home/$APP_USER/app"
-RUN mkdir -p $APP_LOCATION/$CONFIG_FOLDER && \
-    addgroup --gid 9999 $APP_GROUP && \
-    adduser --uid 9999 -D -G $APP_GROUP -h $APP_LOCATION $APP_USER
+RUN addgroup --gid 9999 $APP_GROUP && \
+    adduser --uid 9999 --gid 9999 --disabled-password --gecos "AppUser" $APP_USER && \
+    mkdir -p $APP_LOCATION
 
 # Running as user appuser 😂
 USER $APP_USER
