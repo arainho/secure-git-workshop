@@ -1,7 +1,7 @@
-# pros and cons of pinning image version 🤔
-# FROM docker.io/python:latest                                                                  # latest version
-# FROM docker.io/python:3.9.13                                                                  # pin to version 3.9.13
-FROM docker.io/python@sha256:9998bdce4f636c8922240100b2692482bfc7865a5ac6e89026f4d7af99695e65   # pin to a date specific build
+# Image version pinning pros and cons ... 🤔
+# FROM docker.io/python:latest
+# FROM docker.io/python:3.9.13
+FROM docker.io/python@sha256:9998bdce4f636c8922240100b2692482bfc7865a5ac6e89026f4d7af99695e65
 
 LABEL org.opencontainers.image.authors="arainho.it@gmail.com"
 LABEL org.opencontainers.image.description="git-insecure-workshop"
