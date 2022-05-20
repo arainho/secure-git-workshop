@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.authors="arainho.it@gmail.com"
 LABEL org.opencontainers.image.description="git-insecure-workshop"
 
 # HARDCODED SECRET ... ⚡⚡⚡ ☠️☠️☠️
-ENV API_KEY="secure-password"
+ENV API_KEY="AKIAIOSFODNN7EXAMPLE"
 
 WORKDIR /app
 
