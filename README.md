@@ -1,5 +1,5 @@
-## secure-git workshop 🔓+🔑 = 🔐
-The current repository has several branches, each with a distinct challenge.    
+## (in)secure git workshop 🔓+🔑 = 🔐
+The [secure-git-workshop](https://github.com/arainho/secure-git-workshop) repository has several branches, each with a distinct challenge.    
 You can observe the several steps in the workshop diagram. [[+]](workshop_steps.png)   
 
 ### Starting points 🚗 
