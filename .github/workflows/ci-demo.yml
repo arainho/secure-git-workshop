@@ -67,6 +67,10 @@ jobs:
         run: |
           sed -i -- 's/#config.ini/config.ini/g' .gitignore
           #echo config.ini >> .gitignore
+      - name: Add gitignore to the repo
+        run: |
+          git add .gitignore
+          git commit -m "ignore config.ini file"
       - name: Create and fill out config.ini file locally
         run: cp -v samples/config.ini.sample config.ini
       - name: Ensure that the private config.ini is ignored
