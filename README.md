@@ -1,6 +1,6 @@
 ## (in)secure git workshop 🔓+🔑 = 🔐
-The [secure-git-workshop](https://github.com/arainho/secure-git-workshop) repository has several branches, each with a distinct challenge.    
-You can observe the several steps in the workshop diagram. [[+]](workshop_steps.png)   
+The present repository has several branches, each with a distinct challenge.    
+You can observe the several steps in the workshop diagram [[+]](workshop_steps.png) or the pipeline with all the steps [[~]](https://github.com/arainho/secure-git-workshop/actions/workflows/ci-demo.yml)
 
 ### Starting points 🚗 
 1. The present repo is for demonstration purposes     
