@@ -49,8 +49,9 @@ audit_trufflehog: init
 		--max_depth=20 \
 		--json \
 		--regex \
+		--branch=step8 \
 		--entropy=$(TRUFFLEHOG_ENTROPY) \
-		file:///target | tee $(RESULTS_FOLDER)/trufflehog_report.json | jq -C
+		file:///target | jq -C
  
 shhgit_prepare: init
 	rm -f -- "$(SHHGIT_CONFIG_FILE)"
@@ -66,4 +67,3 @@ audit_shhgit: shhgit_prepare
 		   -local "/src" \
 		   -config-path /app/ \
 		   -entropy-threshold 0 \
-		   -csv-path "/src/$(RESULTS_FOLDER)"
