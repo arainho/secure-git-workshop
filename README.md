@@ -19,11 +19,11 @@ After the workflow finishes, a docker image will be uploaded to your docker hub.
 https://hub.docker.com/r/arainho/git-insecure-workshop
 ```
 
-### 4. Or push the image manually
+### 4. Or push the image manually (optional)
 ```bash
-read -s USERNAME
-read -s TOKEN
-USERNAME=$USERNAME TOKEN=$TOKEN make push
+read -s DOCKER_USERNAME
+read -s DOCKER_TOKEN
+make push
 ```
 
 ### 4. Identify your secret
