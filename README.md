@@ -15,22 +15,28 @@
 ```
 
 ### 3. Add a line with config.ini in gitignore
-```bash
+```
 - Edit .gitignore file
 - write config.ini inside
 ```
 
-### 4. Collect you key from OpenWeatherMap
+### 4. Add gitignore to the repo
+```bash
+git add .gitignore
+git commit -m "ignore config.ini file"
+```
+
+### 5. Collect you key from OpenWeatherMap
 ```
 - https://home.openweathermap.org/api_keys)   
 ```
 
-### 5. Create and fill out config.ini file locally
+### 6. Create and fill out config.ini file locally
 ```
 $ cp -v samples/config.ini.sample config.ini
 ```
 
-### 6. Ensure that the private config.ini is ignored
+### 7. Ensure that the private config.ini is ignored
 ```bash
 grep -r --color config.ini .gitignore | grep -v "#"
 git check-ignore -v config.ini
