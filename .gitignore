@@ -1,5 +1,6 @@
 ## private data
 config.ini
+reports/
 talisman_report/
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,linux,vim,sublimetext,intellij+all,visualstudiocode,python,virtualenv,go,cmake
