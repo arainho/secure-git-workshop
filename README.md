@@ -23,7 +23,7 @@ https://hub.docker.com/r/arainho/git-insecure-workshop
 ```bash
 read -s DOCKER_USERNAME
 read -s DOCKER_TOKEN
-make push
+THE_USER="${DOCKER_USERNAME}" TOKEN="${DOCKER_TOKEN}" make push
 ```
 
 ### 4. Identify your secret
