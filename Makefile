@@ -5,6 +5,7 @@ IMAGE_NAME ?= git-insecure-workshop
 IMAGE_TAG ?= v1.0.0
 DEFAULT_TAG ?= latest
 BUILD_PATH ?= $(PWD)
+RESULTS_FOLDER ?= reports
 DOCKER_USERNAME ?= USERNAME
 DOCKER_TOKEN ?= TOKEN
 
@@ -36,7 +37,9 @@ push: login build tag list scan
 
 secret_detection: audit_trufflehog audit_shhgit
 
-audit_trufflehog:
+init:
+	mkdir -p "$(PWD)/$(RESULTS_FOLDER)"
+audit_trufflehog: init
 	docker run \
 		-t \
 		--rm \
@@ -47,8 +50,7 @@ audit_trufflehog:
 		--entropy=$(TRUFFLEHOG_ENTROPY) \
 		file:///target | tee $(RESULTS_FOLDER)/trufflehog_report.json | jq -C
  
-shhgit_prepare:
-	rm -f -- "$(PWD)/$(RESULTS_FOLDER)"
+shhgit_prepare: init
 	rm -f -- "$(SHHGIT_CONFIG_FILE)"
 	curl https://raw.githubusercontent.com/eth0izzle/shhgit/master/config.yaml -o "/tmp/$(SHHGIT_CONFIG_FILE)"
 
