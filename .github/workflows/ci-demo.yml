@@ -271,7 +271,7 @@ jobs:
          echo supersecrets.txt >> .gitignore
          echo "YOUR_FILE_WITH_SENSITIVE_DATA" >> .gitignore
      - name: Purge file from all commits and branches
-       run: (bfg --delete-files supersecrets.txt | SENSITIVE_FILE=supersecrets.txt make delete)
+       run: (bfg --delete-files supersecrets.txt || FILE_WITH_SECRETS=supersecrets.txt make delete)
      - name: Upload artifacts
        uses: actions/upload-artifact@v3
        with:
