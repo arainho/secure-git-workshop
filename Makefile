@@ -17,7 +17,7 @@ delete:
 	$(SHASUM_CMD) utils/bfg_shasum.txt
 	alias bfg="java -jar utils/bfg.jar"
 	if [[ -f $(FILE_WITH_SECRETS) ]]; then \
-	bfg --delete-files $(FILE_WITH_SECRETS); \
+		bfg --delete-files $(FILE_WITH_SECRETS); \
 	fi
 
 verify:
