@@ -291,7 +291,15 @@ jobs:
          git status
          git checkout step8 -f
      - name: Identify your secret
-       run: make secret_detection
+       run: |
+         apt-get install -y bat
+         echo; \
+         echo 'Manually identify Dockerfile with secrets'
+         bat Dockerfile || cat Dockerfile
+         grep -ri api_key Dockerfile; 
+         echo; \
+         echo 'Use a secret detection tools (e.g. shhgit, trufflehog)'
+         make secret_detection
      - name: Set up QEMU
        uses: docker/setup-qemu-action@v1
      - name: Set up Docker Buildx
