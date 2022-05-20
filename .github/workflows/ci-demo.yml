@@ -82,11 +82,6 @@ jobs:
         with:
           name: repo-artifact
           path: /home/runner/work/secure-git-workshop/secure-git-workshop/
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: repo-artifact
-          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
 
   step2:
     name: Step2
