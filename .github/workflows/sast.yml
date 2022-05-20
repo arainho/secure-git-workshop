@@ -1,4 +1,4 @@
-name: CI - static analysis
+name: CI - Static analysis
 on:
   push:
     branches:
