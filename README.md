@@ -27,12 +27,17 @@ THE_USER="${DOCKER_USERNAME}" TOKEN="${DOCKER_TOKEN}" make push
 ```
 
 ### 4. Identify your secret
-```
-- Manually identify Dockerfile with secrets 
-- Or you can use shhgit and trufflehog 
+Manually identify Dockerfile with secrets
+```bash
+bat Dockerfile || cat Dockerfile
 ```
 
-Check if the layers of the image uploaded to Docker Hub have your secret [[+](https://hub.docker.com/layers/git-insecure-workshop/arainho/git-insecure-workshop/latest/images/sha256-df67b5c0bbec601c99f89bb024ce12abc035994ad88a9e7df82c534975677cf9?context=repo)]
+Use a secret detection tools (e.g. shhgit, trufflehog)
+```bash
+make secret_detection
+```
+
+Analyze the layers of the image uploaded to Docker Hub [[+]](https://hub.docker.com/layers/git-insecure-workshop/arainho/git-insecure-workshop/latest/images/sha256-df67b5c0bbec601c99f89bb024ce12abc035994ad88a9e7df82c534975677cf9?context=repo); can you spot the secret ?
 
 
 ### 5. There is a secret inside the Dockerfile, now what ?
