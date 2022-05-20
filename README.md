@@ -4,7 +4,8 @@
 The required accounts to complete the workshop are:
 ```
 - GitHub
-- OpenWeatherMap 
+- OpenWeatherMap
+- Docker Hub
 ```
 
 Signup GitHub and fork the workshop repository
@@ -16,7 +17,13 @@ Signup GitHub and fork the workshop repository
 Signup and create key for OpenWeatherMap
 ```
 - https://home.openweathermap.org/users/sign_up
-- https://home.openweathermap.org/api_keys)   
+- https://home.openweathermap.org/api_keys 
+```
+
+Signup and create token for Docker Hub
+```
+- https://hub.docker.com/signup
+- https://hub.docker.com/settings/security?generateToken=true
 ```
 
 ### 2. Choose your machine
