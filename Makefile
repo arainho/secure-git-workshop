@@ -47,16 +47,16 @@ audit_trufflehog:
 		--entropy=$(TRUFFLEHOG_ENTROPY) \
 		file:///target | tee $(RESULTS_FOLDER)/trufflehog_report.json | jq -C
  
- audi_shhgit_prepare:
+shhgit_prepare:
 	rm -f -- "$(PWD)/$(RESULTS_FOLDER)"
 	rm -f -- "$(SHHGIT_CONFIG_FILE)"
-	curl https://raw.githubusercontent.com/eth0izzle/shhgit/master/config.yaml -o "$(SHHGIT_CONFIG_FILE)"
+	curl https://raw.githubusercontent.com/eth0izzle/shhgit/master/config.yaml -o "/tmp/$(SHHGIT_CONFIG_FILE)"
 
-audit_shhgit: audi_shhgit_prepare
+audit_shhgit: shhgit_prepare
 	docker run \
 		   --rm \
 		   -v "$(PWD):/src/" \
-		   -v /tmp/config.yaml:/app/config.yaml \
+		   -v "/tmp/$(SHHGIT_CONFIG_FILE):/app/$(SHHGIT_CONFIG_FILE)" \
 		   eth0izzle/shhgit \
 		   -debug \
 		   -local "/src" \
