@@ -282,45 +282,32 @@ jobs:
     runs-on: ubuntu-latest
     needs: [setup, start, step1, step2, step3, step4, step5, step6, step7]
     steps:
-     - name: Download artifacts
-       uses: actions/download-artifact@v2
-       with:
-         name: repo-artifact
-     - name: Moving to step8
-       run: |
-         git status
-         git checkout step8 -f
-     - name: Identify your secret
-       run: |
-         sudo apt-get install -y bat
-         echo;
-         echo 'Manually identify Dockerfile with secrets'
-         bat Dockerfile || cat Dockerfile
-         grep -ri api_key Dockerfile; 
-         echo;
-         echo 'Use a secret detection tools (e.g. shhgit, trufflehog)'
-         make secret_detection
-     - name: Set up QEMU
-       uses: docker/setup-qemu-action@v1
-     - name: Set up Docker Buildx
-       uses: docker/setup-buildx-action@v1
-     - name: Login to DockerHub
-       uses: docker/login-action@v1 
-       with:
-         username: ${{ secrets.DOCKERHUB_USERNAME }}
-         password: ${{ secrets.DOCKERHUB_TOKEN }}
-     - name: Build and push
-       id: docker_build
-       uses: docker/build-push-action@v2
-       with:
-         file: Dockerfile
-         push: true
-         tags: arainho/git-insecure-workshop:latest
-     - name: Upload artifacts
-       uses: actions/upload-artifact@v3
-       with:
-         name: repo-artifact
-         path: /home/runner/work/secure-git-workshop/secure-git-workshop/
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: repo-artifact
+      - name: Moving to step8
+        run: |
+          git status
+          git checkout step8 -f
+      - name: Push the image manually (login, build, tag, push)
+        run: |
+          THE_USER="${{ secrets.DOCKERHUB_USERNAME }}" TOKEN="${{ secrets.DOCKERHUB_TOKEN }}" make push
+      - name: Identify your secret
+        run: |
+          sudo apt-get install -y bat
+          echo;
+          echo 'Manually identify Dockerfile with secrets'
+          bat Dockerfile || cat Dockerfile
+          grep -ri api_key Dockerfile; 
+          echo;
+          echo 'Use a secret detection tools (e.g. shhgit, trufflehog)'
+          make secret_detection
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: repo-artifact
+          path: /home/runner/work/secure-git-workshop/secure-git-workshop/
 
   step9:
     name: Step9
