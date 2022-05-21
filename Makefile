@@ -38,6 +38,7 @@ secret_detection: audit_trufflehog audit_shhgit
 
 init:
 	mkdir -p "$(PWD)/$(RESULTS_FOLDER)"
+
 audit_trufflehog: init
 	docker run \
 		-t \
