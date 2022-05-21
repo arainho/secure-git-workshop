@@ -29,7 +29,7 @@ scan:
 	docker scan $(IMAGE_NAME):$(IMAGE_TAG) \
 		    --accept-license \
 		    --severity high \
-		    -f python-docker/Dockerfile
+		    -f Dockerfile
 
 push: login build tag list
 	docker image push $(REGISTRY)/$(THE_USER)/$(IMAGE_NAME):$(IMAGE_TAG)
