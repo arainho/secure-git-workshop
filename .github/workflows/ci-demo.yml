@@ -292,7 +292,7 @@ jobs:
          git checkout step8 -f
      - name: Identify your secret
        run: |
-         apt-get install -y bat
+         sudo apt-get install -y bat
          echo;
          echo 'Manually identify Dockerfile with secrets'
          bat Dockerfile || cat Dockerfile
