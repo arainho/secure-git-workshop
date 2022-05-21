@@ -60,18 +60,23 @@ Analyze the layers of the image uploaded to Docker Hub [[+]](https://hub.docker.
 -- Scan Dockerfile with secret detection and container scanning tools 
 ```
 
-### 7. Remove container from docker hub
+### 7. Remove image from the container registry
 ```
-- Remove all the container images (advised)
-- Or remove just specific images tags with the secret (more work, more risk!) 
+- Identify your container registries (DockerHub, AWS ECR, GCP Container registry, other)
+- Remove the specific images tags with the secret
+- Test all your app images from the registries
 ```
 
-### 8. Check if your content is saved online
+### 7. Other considerations
 ```
-- We never know if someone saved the content or not!
-- Check number of downloads of your image
-- Verify existence of container in the Internet Archive, Wayback Machine 
+- Are your registries private or public?
+- Is the affected image in use on a running container?
+- Check the number of downloads of your image at DockerHub or other registries
+- Verify the existence of the container in the Internet Archive, Wayback Machine
 ```
+
+If the images are in a public registry, then we never know if someone saved the content or not!
+So revoking the secrets is crucial in these cases.
 
 ### Your done 👍 move to step 9
 ```bash
