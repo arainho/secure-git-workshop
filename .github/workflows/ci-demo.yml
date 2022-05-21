@@ -299,7 +299,7 @@ jobs:
           echo;
           echo 'Manually identify Dockerfile with secrets';
           bat Dockerfile || cat Dockerfile
-          grep -ri api_key Dockerfile; 
+          grep -ri api_key Dockerfile
           echo;
           echo 'Use a secret detection tools (e.g. shhgit, trufflehog)';
           make secret_detection
