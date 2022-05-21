@@ -6,9 +6,6 @@ IMAGE_TAG ?= v1.0.0
 DEFAULT_TAG ?= latest
 BUILD_PATH ?= $(PWD)
 RESULTS_FOLDER ?= reports
-USER ?= DOCKER_USERNAME
-TOKEN ?= DOCKER_TOKEN
-THE_USER ?= DOCKER_USERNAME
 
 TRUFFLEHOG_ENTROPY ?= False
 TRUFFLEHOG_REPORT ?= trufflehog_report.json
@@ -23,7 +20,7 @@ build:
 	docker build --no-cache --tag $(IMAGE_NAME):$(IMAGE_TAG) .
 
 tag:
-	docker image tag $(IMAGE_NAME):$(IMAGE_TAG) $(REGISTRY)/$(DOCKER_USERNAME)/$(IMAGE_NAME):$(IMAGE_TAG)
+	docker image tag $(IMAGE_NAME):$(IMAGE_TAG) $(REGISTRY)/$(THE_USER)/$(IMAGE_NAME):$(IMAGE_TAG)
 
 list:
 	docker images | grep $(IMAGE_NAME):$(IMAGE_TAG)
@@ -35,7 +32,7 @@ scan:
 		    -f python-docker/Dockerfile
 
 push: login build tag list scan
-	docker image push $(REGISTRY)/$(DOCKER_USERNAME)/$(IMAGE_NAME):$(IMAGE_TAG)
+	docker image push $(REGISTRY)/$(THE_USER)/$(IMAGE_NAME):$(IMAGE_TAG)
 
 secret_detection: audit_trufflehog audit_shhgit
 
