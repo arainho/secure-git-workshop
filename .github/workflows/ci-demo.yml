@@ -297,11 +297,11 @@ jobs:
         run: |
           sudo apt-get install -y bat
           echo;
-          echo 'Manually identify Dockerfile with secrets';
+          echo 'Manually identify Dockerfile with secrets'
           bat Dockerfile || cat Dockerfile
           grep -ri api_key Dockerfile
           echo;
-          echo 'Use a secret detection tools (e.g. shhgit, trufflehog)';
+          echo 'Use a secret detection tools (e.g. shhgit, trufflehog)'
           make secret_detection
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
