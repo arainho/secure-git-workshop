@@ -12,7 +12,7 @@ You can observe the several steps in the workshop diagram [[+]](workshop_steps.p
 - Or Fork repo and use GitHub Actions 
 
 ### Workshop steps preview
-You can observe all the execution steps on GitHub [actions](https://github.com/arainho/secure-git-workshop/actions/runs/2366114917) or in the workflow definition file called [ci-demo.yml](https://github.com/arainho/secure-git-workshop/actions/workflows/ci-demo.yml).
+You can observe all the execution steps on GitHub [actions](https://github.com/arainho/secure-git-workshop/actions/runs/2366114917) or in the workflow definition file called [ci-demo.yml](https://github.com/arainho/secure-git-workshop/blob/ci-demo/.github/workflows/ci-demo.yml).
 
 ### Preparation 🧰
 Go to [setup](https://github.com/arainho/secure-git-workshop/tree/setup) 
