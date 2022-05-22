@@ -23,7 +23,7 @@ tag:
 	docker image tag $(IMAGE_NAME):$(IMAGE_TAG) $(REGISTRY)/$(THE_USER)/$(IMAGE_NAME):$(IMAGE_TAG)
 
 list:
-	docker images ls | grep $(IMAGE_NAME):$(IMAGE_TAG)
+	docker images | grep $(IMAGE_NAME) | grep $(IMAGE_TAG)
 
 scan:
 	docker scan $(IMAGE_NAME):$(IMAGE_TAG) \
