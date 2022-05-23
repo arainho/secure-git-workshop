@@ -20,14 +20,19 @@
 - Define software outdated libraries (e.g. requests==2.23.0)
 ```
 
-### 4. Observe alerts and pull requests
+### 4. Set the default branch
+```
+- Define step3 as your default branch
+```
+
+### 5. Observe alerts and pull requests
 ```
 - Wait some minutes
 - View and analyse the dependabot alerts
 - View and approve pull requests
 ```
 
-### 5. Run dependency scan locally (optional)
+### 6. Run dependency scan locally (optional)
 ```
 make dependency_scan
 ```
