@@ -15,9 +15,8 @@ make verify || make setup
 ```
 
 
-### 3. Define metadata for commits
-If it's a personal project, use your personal email.    
-It's a university, use your student email.    
+### 3. Define metadata for commits  
+If it's a university project, use your student email.    
 It's a work project, use your company email.    
 ```bash
 git config user.name "Your Name"
