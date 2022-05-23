@@ -45,6 +45,8 @@ Vagrant.configure("2") do |config|
     
     # pull required images
     docker pull owasp/dependency-check:latest
+    docker pull anchore/grype
+    docker pull aquasec/trivy
 
   SHELL
 end
