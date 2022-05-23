@@ -33,10 +33,11 @@ The adviced operating systems are _macOS or Linux_ with `bash` or `zsh` shell.
 Move to item 3. Install requirements.
 
 #### Option B - Linux VM  
-If you have a machine with MS Windows, this is the advised path to proceed. All the software is pre-installed with the appropriate versions in the provided [Vagrant Box](Vagrantfile).     
-Skip item 3. Install requirements.
+If you have a machine with MS Windows, this is the advised path to proceed.   
+All the software is pre-installed with the appropriate versions in the provided [Vagrant Box](Vagrantfile).   
+Skip item 3. Install requirements.    
 
-Download and install VirtualBox and Vagrant:
+Download and install VirtualBox and Vagrant:    
 ```
 www.virtualbox.org/wiki/Downloads
 www.vagrantup.com/downloads
@@ -49,8 +50,8 @@ vagrant ssh
 ```
 
 ### 3. Install requirements
-This is only required for option A - your Laptop.
-The required tools are the following:
+This is only required for option A - your Laptop.   
+The required tools are the following:     
 ```
 - git *
 - make *
