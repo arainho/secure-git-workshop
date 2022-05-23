@@ -27,7 +27,7 @@
 - View and approve pull requests
 ```
 
-### 5. Run dependency scan locally
+### 5. Run dependency scan locally (optional)
 ```
 make dependency_scan
 ```
