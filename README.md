@@ -15,7 +15,7 @@ make talisman_setup
 ### 3. Check talisman in action
 Add a secret to a file
 ```bash
-echo "# super secret! ⚡⚡⚡☠️☠️☠️ \nawsSecretKey=c64e8c79aacf5ddb02f1274db2d973f363f4f553ab1692" > insecure_notes.txt
+echo "⚡⚡⚡☠️☠️☠️ secret_key=c64e8c79aacf5ddb02f1274db2d973f363f4f553ab1692 " > insecure_notes.txt
 git add insecure_notes.txt
 ```
 
