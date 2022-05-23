@@ -28,7 +28,7 @@ git commit -m "ignore config.ini file"
 
 ### 5. Collect you key from OpenWeatherMap
 ```
-- https://home.openweathermap.org/api_keys)   
+- https://home.openweathermap.org/api_keys
 ```
 
 ### 6. Create and fill out config.ini file locally
