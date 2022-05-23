@@ -12,6 +12,27 @@
 make talisman_setup
 ```
 
+### 3. Check talisman in action
+Add a secret to a file
+```bash
+echo "# super secret! ⚡⚡⚡☠️☠️☠️ \nawsSecretKey=c64e8c79aacf5ddb02f1274db2d973f363f4f553ab1692" > insecure_notes.txt
+git add insecure_notes.txt
+```bash
+
+Try to commit the file, and talisman will prompt a warning.
+```bash
+git commit -m "aws key"                        
+
+Talisman Report:
++--------------------+-------------------------------------------------------------------------------+----------+
+|        FILE        |                                    ERRORS                                     | SEVERITY |
++--------------------+-------------------------------------------------------------------------------+----------+
+| insecure_notes.txt | Expected file to not to contain                                               | high     |
+|                    | hex encoded texts such as:                                                    |          |
+|                    | awsSecretKey=c64e8c79aacf5ddb02f1274db2d973f363...                            |          |
++--------------------+-------------------------------------------------------------------------------+----------+
+```
+
 ### Your done 👍 move to step 3
 ```bash
 git checkout step3
