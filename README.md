@@ -67,7 +67,7 @@ Analyze the layers of the image uploaded to Docker Hub [[+]](https://hub.docker.
 - Test all your app images from the registries
 ```
 
-### 7. Other considerations
+### 8. Other considerations
 ```
 - Are your registries private or public?
 - Is the affected image in use on a running container?
