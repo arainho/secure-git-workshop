@@ -42,6 +42,9 @@ Vagrant.configure("2") do |config|
     # security tools
     curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
     curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.18.3
+    
+    # pull required images
+    docker pull owasp/dependency-check:latest
 
   SHELL
 end
