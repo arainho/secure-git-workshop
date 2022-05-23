@@ -10,6 +10,7 @@ cd secure-git-workshop || exit
 Open your terminal/console and run the below command.
 If the verification fails the `setup` target will try to install the tools.
 ```bash
+git checkout start
 make verify || make setup
 ```
 
