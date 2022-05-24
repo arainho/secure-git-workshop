@@ -6,7 +6,10 @@ DC_PROJECT ?= "dependency-check scan: $(shell pwd)"
 DATA_DIRECTORY ?= "$(DC_DIRECTORY)/data"
 CACHE_DIRECTORY ?= "$(DC_DIRECTORY)/data/cache"
 
-dependency_scan_prepare:
+logout:
+	docker logout
+
+dependency_scan_prepare: logout
 	if [ ! -d /tmp ]; then mkdir -- tmp; fi
 	if [ ! -d "$(DATA_DIRECTORY)" ]; then \
 	    echo "Initially creating persistent directory: $(DATA_DIRECTORY)" \
