@@ -1,5 +1,7 @@
 SHELL := /bin/bash
 
+BRANCH ?= step2
+
 talisman_setup:
 	@echo configure
 	if ! test -d bin; then mkdir -p bin/; fi
@@ -13,3 +15,17 @@ talisman_setup:
 
 	@echo install
 	./bin/install-talisman.sh pre-commit
+
+secret_detection: audit_trufflehog
+
+audit_trufflehog:
+	docker run \
+		-t \
+		--rm \
+		-v $(PWD):/target dxa4481/trufflehog \
+		--max_depth=20 \
+		--json \
+		--regex \
+		--entropy=False \
+		file:///target | jq -C
+		trufflehog file:///$PWD/ --json --regex --entropy=False --branch=$(BRANCH)
