@@ -21,18 +21,16 @@ git add insecure_notes.txt
 
 Try to commit the file, and talisman will prompt a warning.
 ```bash
-git commit -m "secret note1"                        
-```
+git commit -m "secret note1"
 
 Talisman Report:
-```table
-+--------------------+-----------------------------------------------------+----------+
-|  file              | Errors                                              | Severity |
-+--------------------+-----------------------------------------------------+----------+
-| insecure_notes.txt | Expected file to not to contain                     | high     |
-|                    | hex encoded texts such as:                          |          |
-|                    | secret_key=c64e8c79aacf5ddb02f1274db2d973f363f4...  |          |
-+--------------------+-----------------------------------------------------+----------+
++--------------------+------------------------------------------------------+----------+
+|  file              | errors                                               | severity |
++--------------------+------------------------------------------------------+----------+
+| insecure_notes.txt | Expected file to not to contain                      | high     |
+|                    | - hex encoded texts such as:                         |          |
+|                    | - secret_key=c64e8c79aacf5ddb02f1274db2d973f363f4... |          |
++--------------------+------------------------------------------------------+----------+
 ```
 
 ### 4. Try adding a another secret
