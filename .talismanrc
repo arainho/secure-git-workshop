@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: Makefile
+  checksum: eada60ee1e205927fb96837a039441337604f272c77fc7dded30d05a5e4d8860
+version: ""

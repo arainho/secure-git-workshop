@@ -6,10 +6,24 @@ DC_PROJECT ?= "dependency-check scan: $(shell pwd)"
 DATA_DIRECTORY ?= "$(DC_DIRECTORY)/data"
 CACHE_DIRECTORY ?= "$(DC_DIRECTORY)/data/cache"
 
+dependency_scan: trivy_fs
+
 logout:
 	docker logout
 
-dependency_scan_prepare: logout
+trivy_prepare: logout
+	docker pull aquasec/trivy
+
+trivy_fs: trivy_prepare
+	docker run \
+		-v "$(PWD):/myapp" \
+		aquasec/trivy \
+		fs --vuln-type=library \
+		--severity=HIGH,CRITICAL \
+		--exit-code=1 \
+		/myapp
+
+dependency_check_prepare: logout
 	if [ ! -d /tmp ]; then mkdir -- tmp; fi
 	if [ ! -d "$(DATA_DIRECTORY)" ]; then \
 	    echo "Initially creating persistent directory: $(DATA_DIRECTORY)" \
@@ -23,7 +37,7 @@ dependency_scan_prepare: logout
 	# Make sure we are using the latest version
 	docker pull owasp/dependency-check:$(DC_VERSION)
 
-dependency_scan: dependency_scan_prepare
+dependency_check: dependency_check_prepare
 	docker run --rm \
 	    -e user=$(USER) \
 	    -u $(id -u ${USER}):$(id -g ${USER}) \
