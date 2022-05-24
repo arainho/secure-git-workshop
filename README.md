@@ -38,6 +38,9 @@ Take a look on the [requirements.txt](https://github.com/arainho/secure-git-work
 - View and approve pull requests
 ```
 
+dependabot alerts [[+]](https://github.com/arainho/secure-git-workshop/security/dependabot)
+pull requests [[+]](https://github.com/arainho/secure-git-workshop/pulls)
+
 ### 6. Run dependency scan locally (optional)
 ```
 make dependency_scan
