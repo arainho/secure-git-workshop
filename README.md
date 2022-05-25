@@ -22,7 +22,8 @@ git add insecure_notes.txt
 Try to commit the file, and talisman will prompt a warning.
 ```bash
 git commit -m "secret note1"
-
+```
+```bash
 Talisman Report:
 +--------------------+------------------------------------------------------+----------+
 |  file              | errors                                               | severity |
@@ -36,7 +37,7 @@ Talisman Report:
 ### 4. Try adding a another secret
 Add a secret to a file
 ```bash
-echo "# new secret \nAKIAIOSFODNN7EXAMPLE ⚡☠️" >> insecure_notes.txt
+echo "# new secret \nAKIAIOSFODNN7EXAMPLE ⚡☠️" > insecure_notes.txt
 git add insecure_notes.txt
 ```
 
