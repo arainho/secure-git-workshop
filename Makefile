@@ -8,7 +8,7 @@ CITY ?= Lisbon
 TRUFFLEHOG_ENTROPY ?= False
 TRUFFLEHOG_REPORT ?= trufflehog_report.json
 SHHGIT_CONFIG_FILE ?= "config.yaml"
-DOCKERFILE_NAME ?= Dockerfile.draft
+DOCKERFILE_NAME ?= Dockerfile
 
 build:
 	docker build -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) -f $(DOCKERFILE_NAME) .
@@ -19,7 +19,7 @@ rebuild:
 run: build
 	docker run --rm --env API_KEY=$(API_KEY) $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) $(CITY)
 
-container_scanning: audit_trivy
+container_scanning: audit_grype
 
 audit_grype:
 	docker pull anchore/grype
