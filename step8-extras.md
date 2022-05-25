@@ -21,7 +21,7 @@
 - Are your registries private or public?
 - Is the affected image in use on a running container?
 - Check the number of downloads of your image at DockerHub or other registries
-- Verify the existence of the container in the Internet Archive, Wayback Machine
+- Verify the existence of the container in the Internet Archive (https://archive.org) or archive.today (https://archive.is) 
 ```
 
 If the images are in a public registry, then we never know if someone saved the content or not!
