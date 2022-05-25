@@ -1,4 +1,4 @@
-# markmap
+# workshop steps
 
 ## setup
 - `setup lab` 🧰
