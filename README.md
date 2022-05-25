@@ -1,6 +1,6 @@
 ## step7 - wait, I commit a secret!
 
-### 1. Commit dummy secrets
+### 1. Commit file with dummy secrets
 ```bash
 echo username:password | rev > supersecrets.txt
 echo AKIAIOSFODNN7EXAMPLE | rev >> supersecrets.txt
@@ -11,12 +11,14 @@ git add supersecrets.txt
 git commit -m "new secrets" 
 ```
 
-### 2. Remove a file or any content with the secret
+### 2. Remove the secrets
+Remove the whole file
 ```bash
 rm -- "supersecrets.txt"
 git rm supersecrets.txt && git commit -m "remove file with secrets"
 ```
 
+Or remove just specific content
 ```bash
 make fix
 git add get_wheather.py && git commit -m "remove content with secrets"
