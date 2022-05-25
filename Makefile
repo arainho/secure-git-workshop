@@ -8,12 +8,13 @@ CITY ?= Lisbon
 TRUFFLEHOG_ENTROPY ?= False
 TRUFFLEHOG_REPORT ?= trufflehog_report.json
 SHHGIT_CONFIG_FILE ?= "config.yaml"
+DOCKERFILE_NAME ?= Dockerfile.draft
 
 build:
-	docker build -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) .
+	docker build -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) -f $(DOCKERFILE_NAME) .
 
 rebuild:
-	docker build --no-cache -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) .
+	docker build --no-cache -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) -f $(DOCKERFILE_NAME) .
 
 run: build
 	docker run --rm --env API_KEY=$(API_KEY) $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) $(CITY)
