@@ -1,6 +1,6 @@
 ## step5 - dynamic analysis
 
-### 1. Enable dynamic analysis
+### 1. What is dynamic analysis ?
 ```
 - Dynamic application security testing (DAST)
 - "Technologies designed to detect conditions indicative of a security vulnerability in an application in its running state."
