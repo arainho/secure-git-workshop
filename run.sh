@@ -20,12 +20,12 @@ fi
 pushd "$APP_DIR" || return
 
 # Goat REST API
-docker-compose --no-cache web
+docker-compose build --no-cache web
 docker-compose up -d web
 docker-compose logs web
 
 # Goat OpenAPI definition
-docker-compose --no-cache py-web
+docker-compose build --no-cache py-web
 docker-compose up -d py-web
 docker-compose logs py-web
 
