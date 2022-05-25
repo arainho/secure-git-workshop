@@ -1,4 +1,5 @@
 SHELL := /bin/bash
+BRANCH ?= step7
 
 ifeq ($(shell uname -s),Darwin)
 	SHASUM_CMD := shasum -a 256 -c
@@ -8,6 +9,18 @@ endif
 ifeq ($(shell uname -s),Linux)
 	SHASUM_CMD := sha256sum -c
 endif
+
+audit_trufflehog:
+	docker run \
+		-t \
+		--rm \
+		-v $(PWD):/target dxa4481/trufflehog \
+		--max_depth=20 \
+		--json \
+		--regex \
+		--entropy=False \
+		file:///target | jq -C
+		trufflehog file:///$(PWD)/ --json --regex --entropy=False --branch=$(BRANCH)
 
 fix:
 	sed -i $(EXTRA_ARG) 's/\"secure-password\"/get_api_key\(\)/g' get_wheather.py
