@@ -27,10 +27,11 @@ fix:
 	sed -i $(EXTRA_ARG) '/# HARDCODED SECRET.*/d' get_wheather.py
 
 delete:
+	if [ -f "supersecrets.txt" ]; then rm -- "supersecrets.txt"; fi
+	git rm supersecrets.txt && git commit -m "remove file with secrets"
 	$(SHASUM_CMD) utils/bfg_shasum.txt
-	alias bfg="java -jar utils/bfg.jar" && \
 	if [ -f $(FILE_WITH_SECRETS) ]; then \
-		bfg --delete-files $(FILE_WITH_SECRETS); \
+		java -jar utils/bfg.jar --delete-files $(FILE_WITH_SECRETS); \
 	fi
 	git reflog expire --expire=now --all && git gc --prune=now --aggressive
 
