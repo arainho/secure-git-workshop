@@ -1,16 +1,21 @@
 ## start point 💡
 
+Open your terminal/console and run the commands below.
+
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/arainho/secure-git-workshop.git
 cd secure-git-workshop || exit
 ```
 
-### 2. Verify the required tools
-Open your terminal/console and run the below command.
-If the verification fails the `setup` target will try to install the tools.
+### 2. Move to the 'start' branch
 ```bash
 git checkout start
+```
+
+### 3. Verify the required tools
+If the verification fails the `setup` target will try to install the tools.
+```bash
 make verify || make setup
 ```
 
