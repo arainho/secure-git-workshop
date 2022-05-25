@@ -23,12 +23,3 @@
 
 ## step6
 - `container scanning`
-
-## step7
-- `wait, I commit a secret!`
-
-## step8
-- `wait, I upload a container with a secret!`
-
-## step9
-- `leaks`
