@@ -10,7 +10,7 @@ ifeq ($(shell uname -s),Linux)
 	SHASUM_CMD := sha256sum -c
 endif
 
-audit_trufflehog:
+secret_detection:
 	docker run \
 		-t \
 		--rm \
@@ -19,8 +19,8 @@ audit_trufflehog:
 		--json \
 		--regex \
 		--entropy=False \
+		--branch=$(BRANCH) \
 		file:///target | jq -C
-		trufflehog file:///$(PWD)/ --json --regex --entropy=False --branch=$(BRANCH)
 
 fix:
 	sed -i $(EXTRA_ARG) 's/\"secure-password\"/get_api_key\(\)/g' get_wheather.py
