@@ -1,9 +1,14 @@
 ## step7 - wait, I commit a secret!
 
 ### 0. Commit dummy secrets
-```
+```bash
 echo username:password | rev >> supersecrets.txt
 echo AKIAIOSFODNN7EXAMPLE | rev >> supersecrets.txt
+```
+
+```bash
+git add supersecrets.txt
+git commit -m "new secrets" 
 ```
 
 ### 1. Identify your secret
