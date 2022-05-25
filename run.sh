@@ -10,14 +10,14 @@ APP_DIR="rest-api-goat"
 REPORT_FOLDER="reports"
 
 test -d "${REPORT_FOLDER}" || mkdir -p "${REPORT_FOLDER}"
-if [ $DELETE_FLAG == "true" ]
+pushd "${APP_DIR}" || return
+
+if [ "${DELETE_FLAG}" == "true" ]
 then
 	docker-compose rm -f web
 	docker-compose rm -f py-web
 	docker-compose rm -f zap2docker
 fi
-
-pushd "$APP_DIR" || return
 
 # Goat REST API
 docker-compose build --no-cache web
