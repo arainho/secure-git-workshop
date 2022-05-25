@@ -2,3 +2,8 @@ fileignoreconfig:
 - filename: utils/bfg_shasum.txt
   checksum: 433e8bf8d9fcf8bf1c04ac6533bfe751e4937b048239f99e34285cf10731bf5d
 version: ""
+
+fileignoreconfig:
+- filename: get_wheather.py
+  checksum: cf088d2d7e37577802319cebe44703a30051760cc4dbcb3b8c5b848aab4be9d1
+version: ""
