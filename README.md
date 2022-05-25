@@ -2,7 +2,7 @@
 
 ### 1. Commit dummy secrets
 ```bash
-echo username:password | rev >> supersecrets.txt
+echo username:password | rev > supersecrets.txt
 echo AKIAIOSFODNN7EXAMPLE | rev >> supersecrets.txt
 ```
 
