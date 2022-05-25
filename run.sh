@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 DELETE_FLAG="true"
+CACHE_FLAG="${CACHE_FLAG:---no-cache}"
 
 ENV=dev
 API_TARGET="http://py-web:9999"
@@ -20,12 +21,12 @@ then
 fi
 
 # Goat REST API
-docker-compose build --no-cache web
+docker-compose build "${CACHE_FLAG}" web
 docker-compose up -d web
 docker-compose logs web
 
 # Goat OpenAPI definition
-docker-compose build --no-cache py-web
+docker-compose build "${CACHE_FLAG}" py-web
 docker-compose up -d py-web
 docker-compose logs py-web
 
