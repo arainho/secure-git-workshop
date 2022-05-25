@@ -22,15 +22,15 @@ make fix
 git add get_wheather.py && git commit -m "remove content with secrets"
 ```
 
-### 3. Prevent future commits
+### 3. Purge file from all commits and branches
+```bash
+FILE_WITH_SECRETS=supersecrets.txt make delete
+```
+
+### 4. Prevent future commits
 ```
 echo supersecrets.txt >> .gitignore
 echo "YOUR_FILE_WITH_SENSITIVE_DATA" >> .gitignore
-```
-
-### 4. Purge file from all commits and branches
-```bash
-FILE_WITH_SECRETS=supersecrets.txt make delete
 ```
 
 [+more details](step7-details.md)
