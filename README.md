@@ -37,9 +37,14 @@ git commit -m "new secrets"
 [+details](https://docs.github.com/cn/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository#)
 
 ### 4. Remove a file or any content with the secret
+```bash
+rm -- "supersecrets.txt"
+git rm supersecrets.txt && git commit -m "remove file with secrets"
 ```
-- rm -- "supersecrets.txt"
-- make fix
+
+```bash
+make fix
+git add get_wheather.py && git commit -m "remove content with secrets"
 ```
 
 ### 5. Prevent future commits
