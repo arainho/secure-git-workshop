@@ -28,4 +28,4 @@ audit_trufflehog:
 		--regex \
 		--entropy=False \
 		file:///target | jq -C
-		trufflehog file:///$PWD/ --json --regex --entropy=False --branch=$(BRANCH)
+		trufflehog file:///$(PWD)/ --json --regex --entropy=False --branch=$(BRANCH)
