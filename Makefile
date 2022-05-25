@@ -28,10 +28,11 @@ fix:
 
 delete:
 	$(SHASUM_CMD) utils/bfg_shasum.txt
-	alias bfg="java -jar utils/bfg.jar"
-	if [[ -f $(FILE_WITH_SECRETS) ]]; then \
+	alias bfg="java -jar utils/bfg.jar" && \
+	if [ -f $(FILE_WITH_SECRETS) ]; then \
 		bfg --delete-files $(FILE_WITH_SECRETS); \
 	fi
+	git reflog expire --expire=now --all && git gc --prune=now --aggressive
 
 verify:
 	@which bfg
