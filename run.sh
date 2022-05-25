@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DELETE_FLAG="true"
-CACHE_FLAG="${CACHE_FLAG:---no-cache}"
+CACHE_FLAG="${EMPTY:---no-cache}"
 
 ENV=dev
 API_TARGET="http://py-web:9999"
