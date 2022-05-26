@@ -38,4 +38,7 @@ git log --pretty="%an <%ae>" | sort | uniq
 - Alert through email, slack
 ```
 
-### You finish the workshop, congrats! 🎉 
+### Your done 👍 move to xyz-extras
+```bash
+git checkout xyz-extras
+```
