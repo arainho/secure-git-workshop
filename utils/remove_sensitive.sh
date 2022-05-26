@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
-while getopts ":f:" flag; do
+if [[ "$1" != "-f" ]]
+then
+        echo "usage: $0 -f file_with_sensitive_data"
+        exit 1
+fi
+
+while getopts "f" flag; do
   case "${flag}" in
   f) FILE_WITH_SENSITIVE_DATA=$OPTARG ;;
-  *) echo "unknown ${flag}, use $0 -f file_with_sensitive_data" ;;
+  *) echo "usage: $0 -f file_with_sensitive_data"
+     exit 1;;
   esac
 done
 
