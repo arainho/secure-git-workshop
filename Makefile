@@ -26,6 +26,7 @@ fix:
 	sed -i $(EXTRA_ARG) 's/\"secure-password\"/get_api_key\(\)/g' get_wheather.py
 	sed -i $(EXTRA_ARG) '/# HARDCODED SECRET.*/d' get_wheather.py
 
+# if you need it, add --no-blob-protection to bfg
 delete:
 	if [ -f "supersecrets.txt" ]; then \
 		rm -- "supersecrets.txt" && \
