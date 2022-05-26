@@ -15,16 +15,13 @@ ifeq ($(ROOT_ENABLED),NO)
 	DOCKERFILE_NAME := Dockerfile.clean
 endif
 
-test:
-	echo $(DOCKERFILE_NAME)
-
 build:
 	docker build -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) -f $(DOCKERFILE_NAME) .
 
 rebuild:
 	docker build --no-cache -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) -f $(DOCKERFILE_NAME) .
 
-whoami:
+whoami: build
 	docker run -it --entrypoint=/bin/bash $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) -c "whoami"
 
 container_scanning: audit_grype
