@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: Dockerfile.draft
+  checksum: 7c020415d616b84b0035daadad8ebb3cbacf363452bcce64967bbcd76a41bcc3
+version: ""

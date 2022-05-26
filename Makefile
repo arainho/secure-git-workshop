@@ -9,12 +9,23 @@ TRUFFLEHOG_ENTROPY ?= False
 TRUFFLEHOG_REPORT ?= trufflehog_report.json
 SHHGIT_CONFIG_FILE ?= "config.yaml"
 DOCKERFILE_NAME ?= Dockerfile
+ROOT_ENABLED ?= YES
+
+ifeq ($(ROOT_ENABLED),NO)
+	DOCKERFILE_NAME := Dockerfile.clean
+endif
+
+test:
+	echo $(DOCKERFILE_NAME)
 
 build:
 	docker build -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) -f $(DOCKERFILE_NAME) .
 
 rebuild:
 	docker build --no-cache -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) -f $(DOCKERFILE_NAME) .
+
+whoami:
+	docker run -it --entrypoint=/bin/bash $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) -c "whoami"
 
 container_scanning: audit_grype
 
