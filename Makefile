@@ -3,7 +3,7 @@ SHELL := /bin/bash
 REGISTRY ?= localbuild
 IMAGE_NAME ?= git-insecure-workshop
 IMAGE_TAG ?= v1
-CITY ?= Lisbon
+CITY ?= Aveiro
 
 TRUFFLEHOG_ENTROPY ?= False
 TRUFFLEHOG_REPORT ?= trufflehog_report.json
