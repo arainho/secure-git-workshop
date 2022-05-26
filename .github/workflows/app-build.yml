@@ -1,4 +1,4 @@
-name: CI - Build app container
+name: CI - Run app in a container
 
 on:
   push:
@@ -31,5 +31,3 @@ jobs:
        run: API_KEY="${{env.API_KEY}}"
      - name: Spin up the container
        run: API_KEY="${{env.API_KEY}}" make run       
-     - name: Run the container scanning
-       run: make container_scanning
