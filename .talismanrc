@@ -1,4 +1,4 @@
 fileignoreconfig:
-- filename: Dockerfile.draft
-  checksum: 7c020415d616b84b0035daadad8ebb3cbacf363452bcce64967bbcd76a41bcc3
+- filename: Dockerfile.clean
+  checksum: 05cf8fdcbd7457cb68bf5e377206398833653fc9c6ca4b3db1d2911b9b34b173
 version: ""
