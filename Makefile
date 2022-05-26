@@ -3,7 +3,7 @@ SHELL := /bin/bash
 REGISTRY ?= localbuild
 IMAGE_NAME ?= git-insecure-workshop
 IMAGE_TAG ?= v1
-CITY ?= Lisbon
+CITY ?= Aveiro
 
 TRUFFLEHOG_ENTROPY ?= False
 TRUFFLEHOG_REPORT ?= trufflehog_report.json
@@ -15,9 +15,6 @@ build:
 
 rebuild:
 	docker build --no-cache -t $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) -f $(DOCKERFILE_NAME) .
-
-run: build
-	docker run --rm --env API_KEY=$(API_KEY) $(REGISTRY)/$(IMAGE_NAME):$(IMAGE_TAG) $(CITY)
 
 container_scanning: audit_grype
 
