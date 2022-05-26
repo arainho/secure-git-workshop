@@ -12,8 +12,8 @@ make build
 ```
 
 ### 3. Run the container scanning
-We will use the [trivy](https://github.com/aquasecurity/trivy) tool. 
-However, you can use [grype](https://github.com/anchore/grype) running inside a github action. [[+]](https://github.com/marketplace/actions/anchore-container-scan)
+We will use the [grype](https://github.com/anchore/grype) tool. 
+However, you can use [trivy](https://github.com/aquasecurity/trivy) as well.
 ```bash
 make container_scanning
 ```
