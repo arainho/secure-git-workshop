@@ -25,8 +25,9 @@ Vagrant.configure("2") do |config|
     dnf -y install htop iftop iotop \
 	   strace just vim \
            bash zsh fish
-    dnf -y install git python3 jq curl make bat
+    dnf -y install git make python3 java-latest-openjdk curl jq bat 
 
+    # docker
     dnf -y install dnf-plugins-core
     dnf config-manager --add-repo \
         https://download.docker.com/linux/fedora/docker-ce.repo
@@ -44,7 +45,7 @@ Vagrant.configure("2") do |config|
     curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.18.3
     
     # pull required images
-    docker pull owasp/dependency-check:latest
+    docker pull owasp/dependency-check
     docker pull anchore/grype
     docker pull aquasec/trivy
 
