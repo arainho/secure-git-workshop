@@ -56,18 +56,20 @@ The required tools are the following:
 - git *
 - make *
 - docker *
-- python3	
+- python3
+- openjdk 18
 - curl
 - jq
 - bat (optional)
 ```
 
-Download and install git, make, docker, python, curl and jq:
+Download and install git, make, docker, python, openjdk, curl and jq:
 ```
 - https://git-scm.com/downloads
 - https://command-not-found.com/make
 - https://docs.docker.com/get-docker/
 - https://www.python.org/downloads/
+- https://adoptopenjdk.net
 - https://command-not-found.com/curl
 - https://command-not-found.com/jq
 ```
