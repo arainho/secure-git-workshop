@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
     # tools
     dnf -y install htop iftop iotop \
 	   strace just vim \
-           bash zsh fish
+           bash zsh fish perl-Digest-SHA \
     dnf -y install git make python3 java-latest-openjdk curl jq bat 
 
     # docker
