@@ -7,8 +7,11 @@ ifeq ($(shell uname -s),Darwin)
 endif
 
 ifeq ($(shell uname -s),Linux)
+	# un(comment) to fit your Linux OS package manager
 	#PKG_SYSTEM := apt
-	PKG_SYSTEM := yum
+
+	# Vagrant box has Fedora and uses dnf or yum package managers
+	PKG_SYSTEM := dnf
 endif
 
 fix_gi:
