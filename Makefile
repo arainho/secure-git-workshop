@@ -2,12 +2,12 @@ SHELL := /bin/bash
 PACKAGES = git python3 jq curl make
 
 ifeq ($(shell uname -s),Darwin)
-	PKG_SYSTEM=brew
+	PKG_SYSTEM := brew
 	EXTRA_ARG='' -e
 endif
 
 ifeq ($(shell uname -s),Linux)
-	#PKG_SYSTEM=apt
+	#PKG_SYSTEM := apt
 	PKG_SYSTEM := yum
 endif
 
