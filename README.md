@@ -20,8 +20,8 @@ https://sonarcloud.io/create-organization
 
 ### 3. Create a new project and generate a token
 ```
-https://sonarcloud.io/projects/create
-For project key choose git-secure-workshop
+https://sonarcloud.io/projects/create.          # For project key choose git-secure-workshop
+https://sonarcloud.io/account/security
 ```
 
 ### 4. Setup analysis
