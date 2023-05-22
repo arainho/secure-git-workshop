@@ -26,6 +26,14 @@ Signup and create token for Docker Hub
 - https://hub.docker.com/settings/security?generateToken=true
 ```
 
+Signup SonarCloud, create a organization, plus a project and generate a token
+```
+https://www.sonarsource.com/products/sonarcloud/signup
+https://sonarcloud.io/create-organization
+https://sonarcloud.io/projects/create
+https://sonarcloud.io/account/security
+```
+
 ### 2. Choose your machine
 
 #### Option A - Your Laptop
