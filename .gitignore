@@ -1,5 +1,5 @@
 ## private data
-#config.ini
+config.ini
 
 # tmp files
 .gitignore.bak
