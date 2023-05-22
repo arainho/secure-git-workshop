@@ -34,7 +34,7 @@ versions:
 
 verify:
 	@which git
-	@which docker
+	@which docker && docker ps
 	@which python3
 	@which jq
 	@which curl
