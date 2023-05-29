@@ -34,6 +34,7 @@ https://sonarcloud.io/project/configuration?id=git-secure-workshop
 - Follow instructions to create a GitHub Secret and Workflow
 - Copy SONAR_TOKEN and add it to GitHub actions secrets
 - Create a GitHub workflow file .github/workflows/build.yml
+- Create a sonar-project.properties as described
 ```
 
 ### 5. Check the analysis results
