@@ -16,4 +16,4 @@ bandit:
 		--rm \
 		-v $(CURRENT_DIR):/data \
 		cytopia/bandit \
-		-r /data
+		/data/get_wheather.py
