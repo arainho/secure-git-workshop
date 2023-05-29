@@ -65,7 +65,7 @@ jobs:
         run: git checkout step1
       - name: Add a line with config.ini in gitignore
         run: |
-          sed -i -- 's/#config.ini/config.ini/g' .gitignore
+          sed -i 's/#config.ini/config.ini/g' .gitignore
           #echo config.ini >> .gitignore
       - name: Add gitignore to the repo
         run: |
