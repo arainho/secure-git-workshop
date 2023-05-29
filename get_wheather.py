@@ -7,6 +7,7 @@
 import requests
 from sys import argv
 from configparser import ConfigParser
+from json import dumps
 
 def get_api_key():
     config = ConfigParser()
@@ -22,6 +23,9 @@ def get_weather(base_url, api_key, city):
     url = "{base_url}/weather?q={location}&units=metric&appid={key}".format(base_url=base_url, location=city, key=api_key)
     r = requests.get(url)
     return r.json()
+
+def feels_like(wt):
+    return int(wt["main"]["feels_like"])
  
 def main():
     if len(argv) != 2:
@@ -33,7 +37,8 @@ def main():
     weather = get_weather(base_url, api_key, city)
  
     #print(weather['main']['temp'])
-    print(weather)
+    print("25ºC diff is")
+    print(eval("25-feels_like(weather)"))
  
 if __name__ == '__main__':
     main()
