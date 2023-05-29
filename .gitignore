@@ -1,5 +1,7 @@
-## private data
-config.ini
+# lines starting with cardinal(#) are comments! 
+
+## uncomment to ignore private file 👀
+#config.ini
 
 # tmp files
 .gitignore.bak
