@@ -8,7 +8,7 @@
 
 ### 2. Create SonarCloud account and organization
 ```
-https://sonarcloud.io/projects/create
+https://www.sonarsource.com/products/sonarcloud/signup
 https://sonarcloud.io/create-organization
 ```
 
