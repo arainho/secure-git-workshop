@@ -9,6 +9,9 @@ from requests import get
 from sys import argv
 from configparser import ConfigParser
 from os import environ
+from json import dumps
+
+headers = {'Accept': 'application/json'}
 
 ### Avoid files with secrets! ⚡⚡⚡ ☠️☠️☠️
 def get_api_key():
@@ -23,9 +26,9 @@ def get_base_url():
  
 def get_weather(base_url, api_key, city):
     url = "{base_url}/weather?q={location}&units=metric&appid={key}".format(base_url=base_url, location=city, key=api_key)
-    print("url:", url)
-    r = get(url)
-    return r.json()
+    #print("url:", url)
+    r = get(url, headers)
+    return dumps(r.json())
  
 def main():
     if len(argv) != 2:
