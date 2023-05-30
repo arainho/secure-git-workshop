@@ -32,10 +32,12 @@ def main():
     api_key = get_api_key()
     base_url = get_base_url()
     weather = get_weather(base_url, api_key, city)
+    
+    average_temp = input("Enter average temperature:")
  
     #print(weather['main']['temp'])
-    print("25ºC - current temp")
-    print(eval("25-weather['main']['temp']"))
+    print("{} - currentTemp is:".format(average_temp))
+    print(eval("average_temp-weather['main']['temp']"))
  
 if __name__ == '__main__':
     main()
