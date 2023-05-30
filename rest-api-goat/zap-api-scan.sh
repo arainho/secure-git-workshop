@@ -4,16 +4,11 @@ target_api_definition="${TARGET_API_DEF}"
 level_to_show="${LEVEL_TO_SHOW:-PASS}"
 results_file="${REPORT_FILE:-api_report.json}"
 report_folder="${REPORT_FOLDER:-reports}"
-BASE_PATH="/zap/wrk"
+BASE_PATH="/zap"
 
-mkdir -p ${BASE_PATH}
 echo "user: $(whoami)"
 echo "id: $(id $(whoami))"
 echo "pwd: $pwd"
-ls -la /zap/wrk/
-ls -ld /zap/wrk/reports/
-touch /zap/wrk/api_report.json
-ls -la /zap/wrk/api_report.json
 
 if type jq 2>/dev/null
 then
