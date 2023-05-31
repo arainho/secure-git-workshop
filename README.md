@@ -50,3 +50,6 @@ make dependency_scan
 ```bash
 git checkout step4
 ```
+
+#### Other tools
+- [renovate](https://github.com/renovatebot/renovate); a universal dependency update tool that fits in workflows.
